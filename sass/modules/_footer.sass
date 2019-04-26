@@ -1,0 +1,111 @@
+.footer
+	background-color: $color-primary
+	&-top
+		padding: 50px 0 40px
+		border-bottom: 1px solid rgba($color-gray--darkest, .1)
+	&-menu
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		grid-gap: 15px 30px
+		&__item
+			padding: 0 0 0 15px
+			position: relative
+			&:before
+				content: "–"
+				display: block
+				position: absolute
+				top: 50%
+				left: 0
+				transform: translateY(-50%)
+			&_link
+				display: inline-flex
+				padding: 2px 0
+				position: relative
+				color: $color-gray--darkest
+				&:before
+					content: ""
+					display: block
+					position: absolute
+					right: 0
+					bottom: 0
+					width: 0
+					height: 1px
+					background-color: $color-gray--darkest
+					transition: width .4s ease-in-out
+				&:hover:before
+					left: 0
+					right: auto
+					width: 100%
+	&-bottom
+		padding: 40px 0 50px
+
+.call
+	position: fixed
+	top: 50px
+	right: 50px
+	&:hover .call
+		&-title
+			width: 200px
+			&:before
+				width: 100%
+		&-inner
+			width: 210px
+	&.active .call
+		&-title
+			width: 200px
+			&:before
+				content: "Отправить"
+				width: 100%
+		&-inner
+			width: 450px
+			background-color: $color-gray--lightest
+	&-title
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 50px
+		height: 50px
+		border-radius: 50px
+		background-color: $color-primary
+		position: relative
+		z-index: 10
+		transition: width .4s ease-in-out
+		&:before
+			content: "Перезвоните мне"
+			display: block
+			width: 0
+			height: 15px
+			overflow: hidden
+			font-size: $font-size-primary + 1
+			text-align: center
+			font-weight: $font-weight-bold
+			transition: width .4s ease-in-out
+	&-inner
+		position: absolute
+		top: 50%
+		right: -5px
+		width: 60px
+		height: 60px
+		padding: 5px
+		border-radius: 50px
+		background-color: rgba($color-gray--lightest, .5)
+		transform: translateY(-50%)
+		transition: width .4s ease-in-out, background-color .3s ease-in-out
+	&-form
+		width: calc(100% - 200px)
+		height: 100%
+
+.overlay
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: rgba($color-gray--darkest, .8)
+	z-index: 100
+	opacity: 0
+	visibility: hidden
+	transition: opacity .4s ease-in-out, visibility .4s ease-in-out
+	&.active
+		opacity: 1
+		visibility: visible

@@ -1,0 +1,85 @@
+mixin header-menu(...items)
+	ul.header-menu
+		each item in items
+			li.header-menu__item
+				a(href="").header-menu__item_link=item
+
+mixin intro-social__item
+	li.intro-social__item
+		a(href="").intro-social__item_link
+			block
+
+mixin intro-advantages__item
+	.intro-advantages__item
+		.intro-advantages__item_title Название
+
+mixin title(display)
+	- var title = ""+display
+		case title
+			when "Есть текст"
+				.title-wrap
+					h3.title
+						block
+						span.title-line
+					p.title-text Lorem, ipsum dolor sit amet consectetur adipisicing elit. In quas eligendi voluptates nisi esse! Saepe sint nemo neque temporibus culpa eum suscipit vel facere illo fugit vitae, amet sit id.
+			when "Нету текста"
+				.title-wrap
+					h3.title
+						block
+						span.title-line
+
+mixin catalog-item__list_item
+	li.catalog-item__list_item
+		| Название – 
+		strong Значение
+
+mixin catalog-item
+	.catalog-item
+		.catalog-item__image_wrap
+			.catalog-item__image
+			span.catalog-item__label Доставим 
+				strong бесплатно
+		h2.catalog-item__title Очень длинное название элемента
+		ul.catalog-item__list
+			+catalog-item__list_item
+			+catalog-item__list_item
+			+catalog-item__list_item
+			+catalog-item__list_item
+			+catalog-item__list_item
+		+button("", "secondary", "sm", "") Выбрать комплектацию
+
+mixin benefit-item
+	.benefit-item
+		.benefit-item__inner
+			.benefit-item__title Очень длинное название элемента
+			p.benefit-item__text Очень длинный текст 
+				strong элемента
+
+mixin partners-item
+	.partners-item
+		.partners-item__image
+			img(src="../images/partners.png", alt="")
+		h2.partners-item__title Очень длинное название элемента
+		p.partners-item__text Очень длинный текст 
+
+mixin articles-item
+	article.articles-item
+		.articles-item__image
+		time.articles-item__date 23 Апреля 2019г
+		h2.articles-item__title Очень длинное название элемента
+		p.articles-item__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore consequatur expedita, odit dicta recusandae impedit id inventore, sunt neque obcaecati amet, dolorum soluta commodi.
+		+button("", "secondary", "sm", "") Подробнее
+
+mixin footer-menu(...items)
+	ul.footer-menu
+		each item in items
+			li.footer-menu__item
+				a(href="").footer-menu__item_link=item
+
+mixin button(href, style, size, open)
+	a(href=href, class=["btn", "btn-"+style, "btn-"+size, open])
+		block
+
+mixin svg(id)
+	svg
+		use(xlink:href="images/sprite.svg#"+id)

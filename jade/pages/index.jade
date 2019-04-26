@@ -1,0 +1,79 @@
+section.intro
+	.intro-inner.container
+		ul.intro-social
+			span.intro-social__title Смотрите нас
+			+intro-social__item Youtube
+			+intro-social__item Instagram
+		.intro-content
+			h1.intro-title Высокоэффективные полевые опрыскиватели «Рубин»
+			p.intro-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui soluta eligendi sapiente fuga magni alias laboriosam quae inventore? Qui quam nihil voluptate sint harum totam nam, voluptatum in dolorem sed.
+		.intro-advantages
+			+intro-advantages__item
+			+intro-advantages__item
+			+intro-advantages__item
+			+intro-advantages__item
+	.intro-image
+section.section-sm.section-white#test
+	.container
+		+title("Есть текст") Наша продукция
+		.catalog
+			+catalog-item
+			+catalog-item
+			+catalog-item
+section.section-lg.section-white
+	.container
+		+title("Нету текста") Чем выгоден опрыскиватель?
+		.benefit
+			+benefit-item
+			+benefit-item
+			+benefit-item
+			+benefit-item
+			+benefit-item
+section.section-lg.section-yellow
+	.container
+		+title("Есть текст") Видеообзор техники
+section.section-sm.section-gray
+	.container
+		+title("Есть текст") О технике «Рубин»
+		.about
+			p.about-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quaerat nostrum natus sapiente, temporibus consequuntur quia eos. Ducimus, eligendi ut dolores voluptatibus dolore tempora quod, provident, quisquam quam minima maiores.
+			p.about-text Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde quaerat nostrum natus sapiente, temporibus consequuntur quia eos. Ducimus, eligendi ut dolores voluptatibus dolore tempora quod, provident, quisquam quam minima maiores.
+			p.about-text
+				strong Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sequi aspernatur tempore maxime. Harum nulla, dolorem ab expedita rerum ipsam repellendus unde saepe accusamus nihil inventore ut animi voluptates similique.
+			+button("", "primary", "lg", "") Подробнее
+section.section-lg.section-gray
+	.container
+		+title("Нету текста") Наши партнеры
+		.partners
+			+partners-item
+			+partners-item
+			+partners-item
+			+partners-item
+section.section-lg.section-white
+	.container
+		+title("Есть текст") Пресс-центр
+		.articles
+			+articles-item
+			+articles-item
+			+articles-item
+		.btn-wrap
+			+button("", "secondary", "lg", "") Смотреть все новости
+section.section-lg.section-gray
+	.container
+		+title("Есть текст") Дилерские центры
+		.btn-wrap
+			+button("", "primary", "lg", "") Подробнее о дилерских центрах
+section.relations-wrap
+	.relations
+		ul.relations-list
+			li.relations-list__item
+				span.relations-list__item_title Адрес
+				p.relations-list__item_text 443548, Самарская область, Волжский район, п.г.т. Смышляевка, ул.Механиков, 16
+			li.relations-list__item
+				span.relations-list__item_title Телефон / Факс
+				a(href="tel: +7 (846) 202-23-32").relations-list__item_phone +7 (846) 202-23-32
+			li.relations-list__item
+				span.relations-list__item_title Электронная почта
+				a(href="mailto: info@pnevmohod.su").relations-list__item_email info@pnevmohod.su
+		+button("", "primary", "lg", "") Получить консультацию
+	.map
