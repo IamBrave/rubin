@@ -672,6 +672,7 @@ body {
 
 .title-text_large {
   font-size: 18px;
+  line-height: 30px;
 }
 
 .title-line {
@@ -1415,6 +1416,81 @@ body {
           transform: rotate(45deg);
   -webkit-transition: border .3s ease-in-out;
   transition: border .3s ease-in-out;
+}
+
+.smartMap {
+  position: relative;
+  width: 100%;
+}
+
+.smartMap object {
+  width: 100%;
+}
+
+.smartMap-modal {
+  position: absolute;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 155px;
+  padding: 8px 18px 7px 11px;
+  background: #262626;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 100;
+}
+
+.smartMap-modal.enter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  -webkit-transform: translate(30%);
+          transform: translate(30%);
+}
+
+.smartMap-modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.smartMap-modal.exit {
+  opacity: 0;
+  -webkit-transform: translate(30%);
+          transform: translate(30%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.smartMap-adress {
+  width: 100%;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fff;
+}
+
+.smartMap-adress span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+}
+
+.smartMap-tel {
+  width: 100%;
+  font-size: 15px;
+  color: #ffcc00;
 }
 
 .footer {

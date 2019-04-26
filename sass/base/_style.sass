@@ -298,6 +298,7 @@ body
 		line-height: $font-size-secondary + 5
 		&_large
 			font-size: 18px
+			line-height: 30px
 	&-line
 		position: absolute
 		top: 0
@@ -717,6 +718,47 @@ body
 			border-bottom: 3px solid #4a4a4a
 			transform: rotate(45deg)
 			transition: border .3s ease-in-out
+.smartMap
+	position: relative
+	width: 100%
+	object
+		width: 100%	
+	&-modal
+		position: absolute
+		display: none
+		flex-direction: row
+		flex-wrap: wrap
+		width: 155px
+		padding: 8px 18px 7px 11px
+		background: #262626
+		opacity: 1
+		transition: all .3s ease-in-out
+		z-index: 100
+		&.enter
+			display: flex
+			opacity: 0
+			transform: translate(30%)
+		&.active
+			display: flex
+			opacity: 1
+			transform: translate(0)
+			transition: all .3s ease-in-out
+		&.exit
+			opacity: 0
+			transform: translate(30%)
+			transition: all .3s ease-in-out
+	&-adress
+		width: 100%
+		font-size: 12px
+		line-height: 18px
+		color: #fff
+		span
+			display: inline-flex
+			width: 100%
+	&-tel
+		width: 100%
+		font-size: 15px
+		color: #ffcc00 
 
 		
 	
