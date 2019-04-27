@@ -651,6 +651,15 @@ body {
   margin-bottom: 28px;
 }
 
+.relations_aboutPage li.relations-list__item span.relations-list__item_title {
+  margin-bottom: 5px;
+}
+
+.relations_dilers {
+  left: 46.5%;
+  top: 110px;
+}
+
 .map {
   width: 100%;
   height: 100%;
