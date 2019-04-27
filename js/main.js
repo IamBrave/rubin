@@ -344,6 +344,65 @@ $(document).ready(function() {
 		.addTo(controller)
 	});
 
+	$('.smartMap').each(function () {
+		var smartMap = new TimelineMax;
+		smartMap
+			.from('.smartMap-item', 0.5, {
+				opacity: 0,
+				x: 20,
+				ease: SlowMo.easeIn
+			}, '0.6')
+		var smartMap_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(smartMap)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.diler').each(function () {
+		var diler = new TimelineMax;
+		diler
+			.staggerFrom('.diler-item', 0.5, {
+				opacity: 0,
+				y: 20,
+				ease: SlowMo.easeIn
+			}, '0.2')
+		var diler_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(diler)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.offer').each(function () {
+		var offer = new TimelineMax;
+		offer
+			.from('.offer-input', 0.5, {
+				opacity: 0,
+				x: 20,
+				ease: SlowMo.easeIn
+			}, '0.6')
+			.from('.offer-submit', 0.5, {
+				opacity: 0,
+				y: 20,
+				ease: SlowMo.easeIn
+			}, '0.6')
+		var offer_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(offer)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
 
 	// Map
 	function initialize() {
