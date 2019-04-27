@@ -380,19 +380,48 @@ $(document).ready(function() {
 		.addTo(controller)
 	});
 
-	$('.offer').each(function () {
+	$('.contact-item').each(function() {
+		var contact_name = $(this).find('.contact-name');
+		var contact_text = $(this).find('.contact-text');
+
+		var contact = new TimelineMax;
+		contact
+			.from(contact_name, 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0')
+			.from(contact_text, 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0.2')
+		var contact_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(contact)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.offer').each(function() {
+		var offer_inp = $(this).find('.offer-input');
+		var offer_subm = $(this).find('.offer-submit');
+
 		var offer = new TimelineMax;
 		offer
-			.from('.offer-input', 0.5, {
+			.from(offer_inp, 0.5, {
 				opacity: 0,
-				x: 20,
+				x: 50,
 				ease: SlowMo.easeIn
-			}, '0.6')
-			.from('.offer-submit', 0.5, {
+			}, '0')
+			.from(offer_subm, 0.5, {
 				opacity: 0,
-				y: 20,
+				y: 50,
 				ease: SlowMo.easeIn
-			}, '0.6')
+			}, '0.2')
 		var offer_scene = new ScrollMagic.Scene({
 			triggerElement: this
 		})

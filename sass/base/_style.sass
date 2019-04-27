@@ -39,6 +39,8 @@ body
 		padding: 0 0 50px
 	&_modalPartner
 		padding: 0 0 120px
+	&_high
+		padding: 110px 0
 
 @import "../modules/_header"
 
@@ -301,6 +303,9 @@ body
 	&_large
 		font-size: 40px
 		line-height: 62px
+	&_contact
+		font-size: 16px
+		line-height: 24px
 	&-text
 		margin: 15px 0 0
 		font-size: $font-size-primary + 2
@@ -808,6 +813,7 @@ body
 		color: #cdcdcf
 		line-height: 24px
 		border: solid 1px #e8e8e8
+		transition: all .3s ease-in-out 
 		&::placeholder
 			font-size: 18px
 			color: #cdcdcf
@@ -825,7 +831,55 @@ body
 	&-submit
 		margin: 0 auto
 		padding: 22px 58px
+		box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22)
+	&_contact
+		position: absolute
+		width: 66%
+		right: 0
+		bottom: -165px
+		z-index: 5
+		.offer-submit
+			margin: 0px 0px 0px auto
 .contact
+	position: relative
+	display: flex
+	flex-direction: column
+	width: 100%
+	height: 100%
+	> .title-wrap
+		padding-top: 24px
+	&-row
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		margin-bottom: 36px
+	&-col
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		margin-bottom: 40px
+		.contact-item
+			&:first-child
+				margin-bottom: 21px
+	&-subtitle
+		font-size: 16px
+		font-weight: bold
+		line-height: 24px
+		color: #4a4a4a
+	&-item
+		width: 33.3%
+		font-size: 16px
+		line-height: 24px
+	&-name
+		font-weight: bold
+		color: #4a4a4a
+		text-transform: uppercase
+	&-text
+		color: #1d1d1d
+		&_tel
+			font-size: 22px
+			line-height: 1.36	
+	
 
 		
 	

@@ -73,6 +73,10 @@ body {
   padding: 0 0 120px;
 }
 
+.section_high {
+  padding: 110px 0;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -679,6 +683,11 @@ body {
 .title_large {
   font-size: 40px;
   line-height: 62px;
+}
+
+.title_contact {
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .title-text {
@@ -1587,6 +1596,8 @@ body {
   color: #cdcdcf;
   line-height: 24px;
   border: solid 1px #e8e8e8;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
 .offer-input::-webkit-input-placeholder {
@@ -1645,6 +1656,97 @@ body {
 .offer-submit {
   margin: 0 auto;
   padding: 22px 58px;
+  -webkit-box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22);
+          box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22);
+}
+
+.offer_contact {
+  position: absolute;
+  width: 66%;
+  right: 0;
+  bottom: -165px;
+  z-index: 5;
+}
+
+.offer_contact .offer-submit {
+  margin: 0px 0px 0px auto;
+}
+
+.contact {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.contact > .title-wrap {
+  padding-top: 24px;
+}
+
+.contact-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.contact-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.contact-col .contact-item:first-child {
+  margin-bottom: 21px;
+}
+
+.contact-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #4a4a4a;
+}
+
+.contact-item {
+  width: 33.3%;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.contact-name {
+  font-weight: bold;
+  color: #4a4a4a;
+  text-transform: uppercase;
+}
+
+.contact-text {
+  color: #1d1d1d;
+}
+
+.contact-text_tel {
+  font-size: 22px;
+  line-height: 1.36;
 }
 
 .footer {
