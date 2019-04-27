@@ -568,3 +568,20 @@ function raf(fn){
 	})
 }
 
+//video player
+$(document).ready(function(){
+	$(window).load(function(){
+		var player;
+		function onYouTubeIframeAPIReady() {
+			player = new YT.Player('player', {
+				videoId: 'zFKhxaMShV0',
+			});
+		};
+		$('.video-frameBg').on('click', function(){
+			player.playVideo();
+		})
+	});
+});
+
+
+
