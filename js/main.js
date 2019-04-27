@@ -486,7 +486,7 @@ $(document).ready(function() {
 });
 //slick
 $(document).ready(function(){
-	if($('.sertificates-slider') == true ){
+	if(document.querySelector('.sertificates-slider')){
 		$('.sertificates-slider').slick({
 			infinite: false,
 			autoplay: false,
@@ -504,7 +504,7 @@ $(document).ready(function(){
 	}
 });
 $(document).ready(function(){
-	if($('.partnersSlider-slider') == true ){
+	if(document.querySelector('.partnersSlider-slider')){
 		$('.partnersSlider-slider').slick({
 			infinite: true,
 			autoplay: false,
@@ -519,41 +519,43 @@ $(document).ready(function(){
 //smartMap
 $(document).ready(function(){
 	$(window).load(function(){
-		var smartMap = document.querySelector('.smartMap-item');
-		var svgDoc = smartMap.contentDocument;
-		var points = svgDoc.querySelectorAll('.map-point');
-		for (let i = 0; i < points.length; i++) {
-			points[i].addEventListener('mouseenter', function(e){
-				var index = parseInt(this.getAttribute('data-index'));
-				var modal = document.querySelector('.smartMap-modal[data-index="' + index +'"]');
-				var X = e.x;
-					var Y = e.y;
-					var top = Y + 10 + 'px';
-					var left = X + 10 + 'px';
-					$(modal).css({
-						top: top,
-						left: left
-					});
-				var handler = function(){
-					modal.classList.remove('active');
-					modal.removeEventListener('transitionend', handler);
-				};
-				modal.classList.add('enter');
-
-				raf(function(){
-					modal.classList.add('active');
-					modal.classList.remove('enter');
-				});
-				this.addEventListener('mouseleave', function(e){
-					var handler = function (){
-						modal.classList.remove('exit');
+		if(document.querySelector('.smartMap-item')){
+			var smartMap = document.querySelector('.smartMap-item');
+			var svgDoc = smartMap.contentDocument;
+			var points = svgDoc.querySelectorAll('.map-point');
+			for (let i = 0; i < points.length; i++) {
+				points[i].addEventListener('mouseenter', function(e){
+					var index = parseInt(this.getAttribute('data-index'));
+					var modal = document.querySelector('.smartMap-modal[data-index="' + index +'"]');
+					var X = e.x;
+						var Y = e.y;
+						var top = Y + 10 + 'px';
+						var left = X + 10 + 'px';
+						$(modal).css({
+							top: top,
+							left: left
+						});
+					var handler = function(){
 						modal.classList.remove('active');
 						modal.removeEventListener('transitionend', handler);
 					};
-					modal.classList.add('exit');
-					modal.addEventListener('transitionend', handler);
+					modal.classList.add('enter');
+
+					raf(function(){
+						modal.classList.add('active');
+						modal.classList.remove('enter');
+					});
+					this.addEventListener('mouseleave', function(e){
+						var handler = function (){
+							modal.classList.remove('exit');
+							modal.classList.remove('active');
+							modal.removeEventListener('transitionend', handler);
+						};
+						modal.classList.add('exit');
+						modal.addEventListener('transitionend', handler);
+					});
 				});
-			});
+			};
 		};
 	});
 });
