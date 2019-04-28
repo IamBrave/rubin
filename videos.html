@@ -36,7 +36,7 @@
 		<div class="burger-title">Меню</div>
 	</a>
 	<div class="wrapper">
-		<section class="section-lg section-white">
+		<section class="section-lg section-white section_video">
 			<div class="container">
 				<div class="title-wrap">
 					<h3 class="title title_large">Видеообзор техники<span class="title-line"></span>
@@ -46,7 +46,10 @@
 				</div>
 				<div class="video">
 					<div class="video-player">
-						<div class="video-frameOverflow" id="player">
+						<div class="video-frameOverflow">
+								<iframe class="video-frame" id="player" type="text/html"
+								src="http://www.youtube.com/embed/zFKhxaMShV0?enablejsapi=1"
+								frameborder="0"></iframe>
 							<div class="video-frameBg" style="background-image: url('images/car1.jpg') ">
 								<div class="video-mainBtn"><span></span></div>
 							</div>
@@ -217,6 +220,28 @@
 						<!-- /.video-listBlock -->
 					</div>
 					<!-- /.video-player -->
+					<div class="videoFollow">
+						<div class="videoFollow-wrapper">
+							<div class="videoFollow-line"></div>
+							<!-- /.videoFollow-line -->
+							<div class="videoFollow-content">
+								<h4 class="videoFollow-title">Подпишитесь на наш Youtube-канал</h4>
+								<!-- /.videoFollow-title -->
+								<p class="videoFollow-text">И смотрите все самые свежие обзоры</p>
+								<!-- /.videoFollow-text -->
+							</div>
+							<!-- /.videoFollow-content -->
+							<a href="#" class="videoFollow-btn">
+								<div class="videoFollow-ytbBtn"><span></span></div>
+								<!-- /.videoFollow-ytbBtn -->
+								<p class="videoFollow-label">Youtube</p>
+								<!-- /.videoFollow-label -->
+							</a>
+							<!-- /.videoFollow-btn -->
+						</div>
+						<!-- /.videoFollow-wrapper -->
+					</div>
+					<!-- /.videoFollow -->
 				</div>
 				<!-- /.video -->
 			</div>
@@ -351,7 +376,8 @@
 	<script src="js/main.js"></script>
 	<script src="js/slick.min.js"></script>
 	<script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-	<script src="https://www.youtube.com/iframe_api"></script>
+	<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+	
 </body>
 
 </html>

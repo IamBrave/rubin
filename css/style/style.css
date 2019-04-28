@@ -77,6 +77,10 @@ body {
   padding: 110px 0;
 }
 
+.section_video {
+  padding: 100px 0 40px;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -1988,6 +1992,115 @@ body {
 
 .simplebar-track .simplebar-scrollbar.simplebar-visible:before {
   opacity: 1;
+}
+
+.videoFollow {
+  width: 100%;
+  margin-top: 50px;
+  padding: 40px 70px;
+  background: #ffcc00;
+  -webkit-box-shadow: 0px 5px 15px 0 rgba(105, 105, 105, 0.1);
+          box-shadow: 0px 5px 15px 0 rgba(105, 105, 105, 0.1);
+}
+
+.videoFollow-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 32px;
+}
+
+.videoFollow-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  background: #ffffff;
+}
+
+.videoFollow-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.videoFollow-title {
+  font-size: 30px;
+  color: #1d1d1d;
+}
+
+.videoFollow-text {
+  margin-top: 9px;
+  font-size: 18px;
+  color: #1d1d1d;
+}
+
+.videoFollow-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 0px 0px auto;
+  padding: 17px 72px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 5px 15px 0 rgba(105, 105, 105, 0.22);
+          box-shadow: 0px 5px 15px 0 rgba(105, 105, 105, 0.22);
+  position: relative;
+  font-size: 14px;
+  color: #282828;
+  font-weight: bold;
+}
+
+.videoFollow-ytbBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 29px;
+  height: 20px;
+  margin-right: 5px;
+  background: #cb0f0f;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.videoFollow-ytbBtn span {
+  position: relative;
+  width: 0;
+  height: 0;
+  left: 2%;
+  border-style: solid;
+  border-width: 4px 0 4px 7px;
+  border-color: transparent transparent transparent white;
 }
 
 .footer {

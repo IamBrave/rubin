@@ -432,6 +432,62 @@ $(document).ready(function() {
 		.addTo(controller)
 	});
 
+	$('.videoFollow').each(function() {
+		var videoFollowContent = $(this).find('.videoFollow-content, .videoFollow-btn');
+		var videoFollowLine = $(this).find('.videoFollow-line');
+
+		var videoFollow = new TimelineMax;
+		videoFollow
+			.from($('.videoFollow'), 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0')
+			.from(videoFollowContent, 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0.7')
+			.to(videoFollowLine, 0.5, {
+				bottom: 0,
+				ease: SlowMo.easeIn
+			}, '0.4')
+		var videoFollow_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(videoFollow)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+	$('.video').each(function() {
+		var videoPlayer = $(this).find('.video-player');
+		var videoItem = $(this).find('.video-listItem');
+
+		var video = new TimelineMax;
+		video
+			.from(videoPlayer, 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0')
+			.staggerFrom(videoItem, 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0.7')
+
+		var video_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(video)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
 
 	// Map
 	function initialize() {
@@ -571,14 +627,8 @@ function raf(fn){
 //video player
 $(document).ready(function(){
 	$(window).load(function(){
-		var player;
-		function onYouTubeIframeAPIReady() {
-			player = new YT.Player('player', {
-				videoId: 'zFKhxaMShV0',
-			});
-		};
-		$('.video-frameBg').on('click', function(){
-			player.playVideo();
+		$('.video-frameBg').on('click', function(e){
+			$(this).hide('slow');
 		})
 	});
 });
