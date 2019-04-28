@@ -89,6 +89,21 @@ body {
   width: 100%;
 }
 
+.section_bg {
+  position: relative;
+}
+
+.section-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -728,6 +743,14 @@ body {
 
 .title-wrap_article {
   max-width: 800px;
+}
+
+.title-wrap_product {
+  max-width: 900px;
+}
+
+.title-subRow {
+  display: block;
 }
 
 .btn {
