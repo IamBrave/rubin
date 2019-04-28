@@ -488,6 +488,39 @@ $(document).ready(function() {
 		.addTo(controller)
 	});
 
+	$('.expl').each(function() {
+		var explElem = $(this).find('.expl-text');
+		var explElem2 = $(this).find('.expl-subtitle');
+		var explElem3 = $(this).find('.expl-link');
+
+		var expl = new TimelineMax;
+		expl
+			.staggerFrom(explElem, 0.5, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0.2')
+			.staggerFrom(explElem2, 0.5, {
+				opacity: 0,
+				y: 50,
+				ease: SlowMo.easeIn
+			}, '0.7')
+			.staggerFrom(explElem3, 0.5, {
+				opacity: 0,
+				y: 50,
+				ease: SlowMo.easeIn
+			}, '2')
+
+		var expl_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(expl)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
 
 	// Map
 	function initialize() {

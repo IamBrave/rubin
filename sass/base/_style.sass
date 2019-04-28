@@ -43,6 +43,10 @@ body
 		padding: 110px 0
 	&_video
 		padding: 100px 0 40px
+	&_questions
+		padding: 90px 0 120px
+		.title-wrap
+			width: 100%
 
 @import "../modules/_header"
 
@@ -447,6 +451,8 @@ body
 		&_current
 			font-size: 24px
 			color: #262626
+	&_expl
+		padding: 40px 0 130px
 .arrows
 	position: absolute
 	display: flex
@@ -1077,6 +1083,37 @@ body
 			border-style: solid
 			border-width: 4px 0 4px 7px
 			border-color: transparent transparent transparent rgba(255, 255, 255, 1)
+.expl
+	padding: 70px 0 0
+	&-text, p
+		width: 74.5%
+		margin-bottom: 40px
+		font-size: 16px
+		line-height: 30px
+		color: #4a4a4a
+		&:nth-last-child(2)
+			margin-bottom: 70px
+		&_first
+			margin-bottom: 65px
+	&-subtitle, p.expl-subtitle
+		margin-bottom: 24px
+		font-size: 24px
+		font-weight: bold
+		color: #1d1d1d
+	&-link
+		display: inline-flex
+		flex-direction: row
+		align-items: center
+		padding: 21px 40px 19px
+		svg
+			width: 17px
+			height: 20px
+			margin-right: 16px
+			g
+				transition: fill 0.3s ease-in-out
+		&:hover
+			#file-download
+				fill: #fff
 
 
 

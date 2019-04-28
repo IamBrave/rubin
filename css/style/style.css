@@ -81,6 +81,14 @@ body {
   padding: 100px 0 40px;
 }
 
+.section_questions {
+  padding: 90px 0 120px;
+}
+
+.section_questions .title-wrap {
+  width: 100%;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -936,6 +944,10 @@ body {
 .sertificates-num_current {
   font-size: 24px;
   color: #262626;
+}
+
+.sertificates_expl {
+  padding: 40px 0 130px;
 }
 
 .arrows {
@@ -2101,6 +2113,62 @@ body {
   border-style: solid;
   border-width: 4px 0 4px 7px;
   border-color: transparent transparent transparent white;
+}
+
+.expl {
+  padding: 70px 0 0;
+}
+
+.expl-text, .expl p {
+  width: 74.5%;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #4a4a4a;
+}
+
+.expl-text:nth-last-child(2), .expl p:nth-last-child(2) {
+  margin-bottom: 70px;
+}
+
+.expl-text_first, .expl p_first {
+  margin-bottom: 65px;
+}
+
+.expl-subtitle, .expl p.expl-subtitle {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1d1d1d;
+}
+
+.expl-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 21px 40px 19px;
+}
+
+.expl-link svg {
+  width: 17px;
+  height: 20px;
+  margin-right: 16px;
+}
+
+.expl-link svg g {
+  -webkit-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+
+.expl-link:hover #file-download {
+  fill: #fff;
 }
 
 .footer {
