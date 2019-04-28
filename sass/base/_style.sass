@@ -58,6 +58,8 @@ body
 		background-position: center
 		background-size: cover
 		background-repeat: no-repeat
+	&_order
+		padding: 30px 56px
 
 
 
@@ -1138,7 +1140,7 @@ body
 			#file-download
 				fill: #fff
 .product
-	padding: 40px 0 70px
+	padding: 40px 0 0
 	&-card
 		display: flex
 		flex-direction: row
@@ -1215,6 +1217,96 @@ body
 		&:after
 			position: relative
 			content: ''
+	&-labelRadio
+		position: relative
+		display: flex 
+		align-items: center
+		margin-bottom: 15px
+		font-size: 14px
+		font-weight: normal
+		line-height: 18px
+		color: #1d1d1d
+		cursor: pointer
+		svg
+			width: 20px
+			min-width: 20px
+			height: 20px
+			margin-right: 13px
+	&-tabs
+		display: flex
+		align-items: center
+		flex-wrap: wrap
+		width: 100%
+	&-tab
+		display: flex
+		justify-content: center 
+		align-items: center
+		width: 33.3%
+		padding: 24px 134px 19px
+		font-size: 18px
+		background: #e7e7e7
+		color: #4a4a4a
+		transition: all 0.3s ease-in-out
+		&:hover
+			background: #ffcc00
+			color: #1d1d1d
+		&.active
+			background: #ffcc00
+			color: #1d1d1d
+	&-description
+		width: 65%
+		margin-top: 32px
+		font-size: 16px
+		line-height: 30px
+		color: #1d1d1d
+.part
+	&-wrapper
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		flex-wrap: wrap
+		padding: 32px 0 px
+	&-item
+		display: flex
+		flex-direction: row
+		width: 49%
+		height: 240px
+		padding: 25px
+		border: solid 1px #e7e7e7
+		transition: all .3s ease-in-out
+		&.active
+			border-left: 5px solid #ffcc00
+		&:hover
+			box-shadow: 0px 9px 16px 0 rgba(105, 105, 105, 0.22)
+	&-image
+		width: 37%
+		min-width: 37%
+		height: 100%
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+	&-content
+		display: flex
+		flex-direction: column
+		padding-left: 30px
+	&-title
+		position: relative
+		margin-bottom: 24px
+		font-size: 18px
+		font-weight: bold
+		line-height: 24px
+		color: #1d1d1d
+	&-line
+		position: relative
+		top: 0
+		left: 0
+		margin-right: 11px
+		width: 1.5px
+		background: #ffcc00
+
+
+
+
 
 
 
