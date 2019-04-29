@@ -195,6 +195,11 @@ $(document).ready(function() {
 				x: 50,
 				ease: SlowMo.easeIn
 			}, 0.2)
+			.from('.aboutPage-hexagon', 0.5, {
+				opacity: 0, 
+				x: 150,
+				ease: SlowMo.easeIn
+			}, 0.2)
 		
 		var aboutPage_scene = new ScrollMagic.Scene({
 			triggerElement: this
@@ -657,14 +662,7 @@ function raf(fn){
 	})
 }
 
-//video player
-$(document).ready(function(){
-	$(window).load(function(){
-		$('.video-frameBg').on('click', function(e){
-			$(this).hide('slow');
-		})
-	});
-});
+
 
 
 
