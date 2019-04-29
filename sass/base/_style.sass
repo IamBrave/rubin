@@ -9,6 +9,10 @@ body
 	background-color: $color-primary
 	color: $color-gray--darkest
 
+::-ms-expand
+	display: none
+
+
 .wrapper
 	height: 100vh
 	transition: transform .4s ease-in-out
@@ -59,7 +63,7 @@ body
 		background-size: cover
 		background-repeat: no-repeat
 	&_order
-		padding: 30px 56px
+		padding: 30px 0 56px
 
 
 
@@ -1191,6 +1195,9 @@ body
 		padding: 47px 48px 51px 35px
 		background: #fff
 		box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22)
+	&-form
+		display: flex
+		flex-direction: column
 	&-label
 		margin: 36px 0 14px
 		font-size: 18px
@@ -1198,25 +1205,23 @@ body
 		color: #1d1d1d
 		&:first-child
 			margin-top: 0
+	&-selectWrapper
+		width: 90%
+		box-shadow: 0px 6px 7px 0 rgba(105, 105, 105, 0.22)
 	&-select
 		position: relative
-		width: 90%
+		width: 100%
 		padding: 18px 22px
 		font-size: 16px
 		color: #1d1d1d
-		border: none
-		box-shadow: 0px 6px 7px 0 rgba(105, 105, 105, 0.22)
-		background: #fff
-		&:before
-			position: relative
-			content: ''
-			display: block
-			width: 60px
-			height: 40px
-			background: #000
-		&:after
-			position: relative
-			content: ''
+		border: none !important	
+		background: none !important
+		appearance: none
+		outline: none !important
+		&:focus
+			outline: none !important
+			border: none !important	
+
 	&-labelRadio
 		position: relative
 		display: flex 
@@ -1265,19 +1270,23 @@ body
 		flex-direction: row
 		justify-content: space-between
 		flex-wrap: wrap
-		padding: 32px 0 px
+		padding: 32px 0 0
 	&-item
 		display: flex
 		flex-direction: row
 		width: 49%
 		height: 240px
 		padding: 25px
+		margin-bottom: 30px
 		border: solid 1px #e7e7e7
 		transition: all .3s ease-in-out
 		&.active
 			border-left: 5px solid #ffcc00
 		&:hover
 			box-shadow: 0px 9px 16px 0 rgba(105, 105, 105, 0.22)
+			.part-params
+				span
+					background-color: #ffcc00
 	&-image
 		width: 37%
 		min-width: 37%
@@ -1291,19 +1300,130 @@ body
 		padding-left: 30px
 	&-title
 		position: relative
-		margin-bottom: 24px
+		padding-left: 12px
+		margin-bottom: 15px
 		font-size: 18px
 		font-weight: bold
 		line-height: 24px
 		color: #1d1d1d
 	&-line
-		position: relative
+		position: absolute
 		top: 0
 		left: 0
-		margin-right: 11px
 		width: 1.5px
 		background: #ffcc00
+	&-params
+		display: flex
+		flex-direction: row
+		align-items: flex-end
+		font-size: 14px	
+		color: #1d1d1d
+		p
+			max-width: 140px
+			padding-bottom: 2px
+			border-bottom: 1px dashed #ffcc00
+		span
+			position: relative
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-left: 8px
+			width: 20px
+			height: 20px
+			border-radius: 25px
+			background-color: #e7e7e7
+			transition: all .3s ease-in-out
+			cursor: pointer
+	&-add
+		max-width: 240px
+		padding: 17px 40px
+		margin-top: 32px
+		font-size: 14px
+		font-weight: normal
+		color: #4a4a4a
+		border: 1px solid #4a4a4a
+		transition: all .3s ease-in-out
+		&:hover
+			background-color: #ffcc00
+			border-color: #ffcc00
+			box-shadow: 0px 6px 10px 0 rgba(105, 105, 105, 0.22)
+.order
+	&-table, &-form
+		display: flex
+		flex-direction: column
+	&-row
+		position: relative
+		display: flex
+		align-items: center
+		transition: all 0.3s ease-in-out
+		&.active
+			opacity: 1
+			transform: translate(0)
+		&.exit
+			opacity: 0
+			transform: translate(-100px)
+	&-header, &-label
+		position: relative
+		display: flex
+		flex-direction: row
+		width: 100%
+		padding: 11px 38px 12px 0
+		font-size: 18px
+		color: #4a4a4a
+	&-header
+		margin-bottom: 15px
+		font-weight: bold
+		background-color: #e7e7e7
+		span
+			position: absolute
+			left: 27px
+		p
+			padding-left: 101px
+	&-label
+		padding-left: 101px
+		border-bottom: 1px dashed #a1a1a1
+	&-num
+		position: absolute
+		left: 27px
+	&-cancel
+		position: absolute
+		right: 38px
+		cursor: pointer
+	&-submit
+		margin: 54px auto 0
+		padding: 23px 68px
+		box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22)
+.more
+	&-item
+		display: flex
+		flex-direction: row
+		width: 100%
+	&-image
+		width: 26%
+		min-height: 200px
+		background-position: center
+		background-size: cover
+		background-repeat: no-repeat
+	&-content
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
+		flex-direction: column
+		width: 74%
+		padding-left: 33px
+	&-name
+		width: 50%
+		font-size: 18px
+		font-weight: bold
+		line-height: 30px
+		color: #1d1d1d
+		span
+			display: block
+	&-link
+		padding: 19px 57px
+		margin-top: 16px
 
+	
 
 
 
