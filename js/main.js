@@ -421,7 +421,7 @@ $(document).ready(function() {
 				opacity: 0,
 				x: 50,
 				ease: SlowMo.easeIn
-			}, '0')
+			}, '0.5')
 			.from(offer_subm, 0.5, {
 				opacity: 0,
 				y: 50,
