@@ -2648,7 +2648,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  bottom: -50px;
   width: 5px;
   max-height: 20px;
   background: #ffcc00;
@@ -2940,6 +2939,79 @@ body {
 
 .bx-breadcrumb-item-text {
   font-weight: normal;
+}
+
+.modal {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-window {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 700px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 50px 100px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22);
+          box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22);
+  z-index: 100;
+}
+
+.modal-bg {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 99vw;
+  height: 100vh;
+  z-index: 99;
+  background: #000;
+  opacity: 0.5;
+}
+
+.modal-close {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #000;
+}
+
+.modal .title {
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.modal .offer-input {
+  width: 80%;
+  margin: 0 auto 20px;
+}
+
+.modal .offer-submit {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .footer {

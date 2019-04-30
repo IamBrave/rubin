@@ -1529,6 +1529,54 @@ body
 		&-text
 			font-weight: normal
 
+.modal
+	position: relative
+	display: block
+	width: 100%
+	height: 100%
+	&-window
+		position: fixed
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 700px
+		height: 500px
+		display: flex
+		flex-direction: column
+		padding: 50px 100px
+		background: #ffffff
+		box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22)
+		z-index: 100
+	&-bg
+		position: absolute
+		display: block
+		left: 0
+		right: 0
+		bottom: 0
+		width: 99vw
+		height: 100vh
+		z-index: 99
+		background: #000
+		opacity: 0.5
+	&-close
+		position: relative
+		display: flex
+		justify-content: center 
+		align-items: center
+		width: 10px
+		height: 10px
+		border: 2px solid #000
+	.title
+		font-size: 25px
+		line-height: 1.5
+	.offer-input
+		width: 80%
+		margin: 0 auto 20px
+	.offer-submit
+		margin-left: auto
+		margin-right: 0
+
+
 
 	
 
