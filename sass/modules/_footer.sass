@@ -1,7 +1,7 @@
 .footer
+	position: relative
 	&-top
 		padding: 110px 0 70px
-		border-bottom: 10px solid #000
 	&-menu
 		display: flex
 		flex-wrap: wrap
@@ -40,11 +40,48 @@
 					right: auto
 					width: 100%
 	&-bottom
+		position: relative
 		padding: 60px 0 100px
 		display: flex
 		flex-direction: row
 		justify-content: space-between
 		align-items: flex-start
+		border-top: 1px solid #c58e19
+	&-bottomItem
+		width: 25%
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		flex-wrap: wrap
+		font-size: 16px
+		color: #1d1d1d
+	&-bottomDept
+		margin-bottom: 17px
+		font-weight: normal
+	&-bottomTel
+		width: 100%
+		font-weight: bold
+	&-bottomLink
+		display: flex 
+		align-items: center
+		font-weight: normal
+		color: #000
+		img
+			width: 28px
+			margin-right: 8px
+		&.btn
+			width: 100%
+			padding: 24px 53px
+			margin-bottom: 20px
+			font-weight: bold
+			font-size: 14px
+			border-color: #000
+			&:hover
+				border-color: rgb(74, 74, 74)
+				color: #ffcc00
+	&-bg
+		
+
 
 .call
 	position: fixed

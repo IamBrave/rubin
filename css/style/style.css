@@ -107,8 +107,8 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
+  background-position: bottom;
+  background-size: initial;
   background-repeat: no-repeat;
 }
 
@@ -2876,9 +2876,12 @@ body {
   margin-top: 16px;
 }
 
+.footer {
+  position: relative;
+}
+
 .footer-top {
   padding: 110px 0 70px;
-  border-bottom: 10px solid #000;
 }
 
 .footer-menu {
@@ -2941,6 +2944,7 @@ body {
 }
 
 .footer-bottom {
+  position: relative;
   padding: 60px 0 100px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2955,6 +2959,65 @@ body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  border-top: 1px solid #c58e19;
+}
+
+.footer-bottomItem {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 16px;
+  color: #1d1d1d;
+}
+
+.footer-bottomDept {
+  margin-bottom: 17px;
+  font-weight: normal;
+}
+
+.footer-bottomTel {
+  width: 100%;
+  font-weight: bold;
+}
+
+.footer-bottomLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: normal;
+  color: #000;
+}
+
+.footer-bottomLink img {
+  width: 28px;
+  margin-right: 8px;
+}
+
+.footer-bottomLink.btn {
+  width: 100%;
+  padding: 24px 53px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  border-color: #000;
+}
+
+.footer-bottomLink.btn:hover {
+  border-color: #4a4a4a;
+  color: #ffcc00;
 }
 
 .call {
