@@ -461,6 +461,7 @@ $(document).ready(function() {
 		var contact_scene = new ScrollMagic.Scene({
 			triggerElement: this
 		})
+		.setTween(contact)
 		.addIndicators({
 			name: "1 (duration: 0)"
 		})
@@ -741,7 +742,96 @@ function raf(fn){
 	})
 }
 
-//selects
+//форма на странице "Продукт"
+//табы
+$(document).ready(function(){
+	if(document.querySelector('.product-tabs')){
+		$('.product-tab').on('click', function(e){
+			e.preventDefault();
+			var id = this.getAttribute('data-id');
+			var elem = document.querySelector('.part-wrapper[data-id="'+ id +'"]');
+			var active = document.querySelector('.product-tab.active');
+			var activeElem = document.querySelector('.part-wrapper.active');
+		
+			if($(elem).hasClass('active') == false){
+				animateExit(active);
+				animateExit(activeElem);
+				animateActive(this);
+				animateActive(elem);
+			} else {
+			}
+		});
+
+		$('.part-item').on('click', function(e){
+
+			if($(e.target).hasClass('part-add')){
+				e.preventDefault();
+
+				if($(this).hasClass('active') == false){
+					var id = this.getAttribute('data-detail');
+					var add = this.querySelector('.part-add');
+					var elem = document.querySelector('.order-input[data-detail="'+ id +'"]');
+					var wrapper = document.querySelector('.order-row[data-detail="'+ id +'"]');
+					
+					if($(wrapper).hasClass('active') == false){
+						animateActive(this);
+						animateActive(wrapper);
+						add.text = 'Добавлено в комплект';
+						elem.checked = true;
+						elem.classList.add('active');
+					} 
+				};
+			}
+		});
+
+		$('.order-row').on('click', function(e){
+			if($(e.target).hasClass('order-cancel')){
+
+				var id = this.getAttribute('data-detail');
+				var inp = this.querySelector('.order-input');
+				var wrapper = document.querySelector('.part-item[data-detail="'+ id +'"]');
+				var elem = wrapper.querySelector('.part-add');
+				
+				if($(inp).hasClass('active') == true){
+					inp.checked = false;
+					animateExit(wrapper);
+					animateExit(elem);
+					animateExit(this);
+					elem.text = 'Добавить в комплектацию';
+				} else {
+				}
+			};
+		});
+
+		function animateActive (modal){
+			var handler = function(){
+				modal.classList.remove('active');
+				modal.removeEventListener('transitionend', handler);
+			};
+			modal.classList.add('enter');
+
+			raf(function(){
+				modal.classList.add('active');
+				modal.classList.remove('enter');
+			});
+		};
+
+		function animateExit (modal){
+			console.log(modal);
+			var handler = function (){
+				modal.classList.remove('exit');
+				modal.classList.remove('active');
+				modal.removeEventListener('transitionend', handler);
+			};
+			modal.classList.add('exit');
+			modal.addEventListener('transitionend', handler);
+		};
+
+	};
+});
+
+
+
 
 
 
