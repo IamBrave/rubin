@@ -224,10 +224,13 @@ body {
   width: 100%;
   height: 1px;
   margin: 0 0 8px;
-  background-color: #ffffff;
+  background-color: #000;
   position: relative;
   -webkit-transition: width .4s ease-in-out;
   transition: width .4s ease-in-out;
+}
+.burger-line_white {
+	background-color: #fff;
 }
 
 .burger-line:last-child {
@@ -249,12 +252,16 @@ body {
 
 .burger-title {
   margin: 0 0 0 15px;
-  color: #ffffff;
+  color: #000;
   font-size: 15px;
   text-transform: uppercase;
   font-weight: 400;
   -webkit-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
+}
+
+.burger-title_white {
+	color: #fff;
 }
 
 .intro {

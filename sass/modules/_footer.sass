@@ -1,13 +1,14 @@
 .footer
-	background-color: $color-primary
 	&-top
-		padding: 50px 0 40px
-		border-bottom: 1px solid rgba($color-gray--darkest, .1)
+		padding: 110px 0 70px
+		border-bottom: 10px solid #000
 	&-menu
-		display: grid
-		grid-template-columns: repeat(4, 1fr)
-		grid-gap: 15px 30px
+		display: flex
+		flex-wrap: wrap
+		flex-direction: row
 		&__item
+			width: 25%
+			line-height: 40px
 			padding: 0 0 0 15px
 			position: relative
 			&:before
@@ -21,6 +22,8 @@
 				display: inline-flex
 				padding: 2px 0
 				position: relative
+				font-size: 16px
+				font-weight: normal
 				color: $color-gray--darkest
 				&:before
 					content: ""
@@ -37,7 +40,11 @@
 					right: auto
 					width: 100%
 	&-bottom
-		padding: 40px 0 50px
+		padding: 60px 0 100px
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		align-items: flex-start
 
 .call
 	position: fixed
