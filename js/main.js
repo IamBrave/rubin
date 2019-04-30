@@ -451,7 +451,7 @@ $(document).ready(function() {
 			.from(contact_name, 0.5, {
 				opacity: 0,
 				x: 50,
-				ease: SlowMo.easeIn
+				ease: SlowMo.easeIn, 
 			}, '0')
 			.from(contact_text, 0.5, {
 				opacity: 0,
@@ -461,7 +461,6 @@ $(document).ready(function() {
 		var contact_scene = new ScrollMagic.Scene({
 			triggerElement: this
 		})
-		.setTween(contact)
 		.addIndicators({
 			name: "1 (duration: 0)"
 		})
