@@ -748,17 +748,18 @@ $(document).ready(function(){
 	if(document.querySelector('.product-tabs')){
 		$('.product-tab').on('click', function(e){
 			e.preventDefault();
+			var tabNew = this;
 			var id = this.getAttribute('data-id');
-			var elem = document.querySelector('.part-wrapper[data-id="'+ id +'"]');
-			var active = document.querySelector('.product-tab.active');
+			var elemNew = document.querySelector('.part-wrapper[data-id="'+ id +'"]');
+			var activ = document.querySelector('.product-tab.btn.active');
 			var activeElem = document.querySelector('.part-wrapper.active');
 		
-			if($(elem).hasClass('active') == false){
-				animateExit(active);
+			if($(elemNew).hasClass('active') == false){
 				animateExit(activeElem);
-				animateActive(this);
-				animateActive(elem);
-			} else {
+				activ.classList.remove('active');
+				animateExit(activ);
+				animateActive(tabNew);
+				animateActive(elemNew);
 			}
 		});
 
@@ -772,6 +773,8 @@ $(document).ready(function(){
 					var add = this.querySelector('.part-add');
 					var elem = document.querySelector('.order-input[data-detail="'+ id +'"]');
 					var wrapper = document.querySelector('.order-row[data-detail="'+ id +'"]');
+					var rowsI = document.querySelectorAll('.order-row.active').length + 1;
+					var numb = wrapper.querySelector('.order-num');
 					
 					if($(wrapper).hasClass('active') == false){
 						animateActive(this);
@@ -779,6 +782,8 @@ $(document).ready(function(){
 						add.text = 'Добавлено в комплект';
 						elem.checked = true;
 						elem.classList.add('active');
+						numb.innerHTML = ''+ rowsI +'';
+						console.log(numb, rowsI);
 					} 
 				};
 			}
@@ -817,7 +822,6 @@ $(document).ready(function(){
 		};
 
 		function animateExit (modal){
-			console.log(modal);
 			var handler = function (){
 				modal.classList.remove('exit');
 				modal.classList.remove('active');
