@@ -39,6 +39,8 @@ body
 			background-color: $color-gray--darkest
 	&_partnersSlider
 		padding: 110px 0 195px
+	&_partnersSliderHome
+		padding-bottom: 195px
 	&_diler
 		padding: 0 0 50px
 	&_modalPartner
@@ -68,10 +70,53 @@ body
 		padding-bottom: 27px
 	&_offerDev
 		padding: 90px 0 70px
+	&_more
+		padding-top: 56px
+	&_articleSingle
+		padding-bottom: 30px
+	&_vy
+		padding-bottom: 130px
 
 
 
 @import "../modules/_header"
+
+.btn
+	display: inline-flex
+	justify-content: center
+	border: 2px solid transparent
+	text-transform: uppercase
+	font-weight: $font-weight-bold
+	cursor: pointer
+	transition: border-color .3s ease-in-out, background-color .3s ease-in-out, color .3s ease-in-out
+	&-primary
+		background-color: $color-primary
+		color: $color-gray--darkest
+		&:hover
+			background-color: $color-gray--darken
+			color: $color-gray--lightest
+	&-secondary
+		border-color: $color-gray--darken
+		color: $color-gray--darken
+		&:hover
+			background-color: $color-gray--darken
+			color: $color-gray--lightest
+	&-lg
+		padding: 20px 40px
+	&-sm
+		padding: 15px 30px
+	&-wrap
+		margin: 50px 0 0
+		text-align: center
+	&-toYellow
+		border: solid 2px #4a4a4a
+		color: #4a4a4a
+		transition: all 0.3s linear
+		&:hover
+			box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22)
+			background-color: #ffcc00
+			border-color: #ffcc00
+			color: #2b356a
 
 .intro
 	height: 100vh
@@ -92,7 +137,13 @@ body
 			text-transform: uppercase
 			font-weight: $font-weight-regular
 		&__item
+			display: flex
+			flex-direction: row
+			align-items: center
 			margin: 0 0 0 20px
+			svg
+				height: 20px
+				margin-right: 5px
 			&_link
 				color: $color-primary
 				font-size: $font-size-primary + 2
@@ -118,19 +169,24 @@ body
 		grid-template-columns: repeat(4, 1fr)
 		grid-gap: 30px
 		&__item
+			display: flex
+			flex-direction: column
+			align-items: center
+			width: 180px
 			&_title
-				margin: 20px 0 0
+				margin: 24px 0 0
 				color: $color-gray--lightest
 				font-size: $font-size-primary + 4
 				text-transform: uppercase
 				font-weight: $font-weight-bold
+				text-align: center
+				line-height: 24px
 	&-image
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
 		bottom: 0
-		background-image: url("../images/banner.jpg")
 		background-size: cover
 		background-position: center center
 		background-repeat: no-repeat
@@ -143,6 +199,56 @@ body
 			right: 0
 			bottom: 0
 			background-color: rgba($color-gray--darkest, .8)
+	&-btn
+		margin-top: 41px
+		color: #fff
+		padding: 25px 138px
+		border: solid 2px #ffcc00
+		background-color: transparent
+		&:hover
+			color: #000
+			border-color: #ffcc00
+			background-color: #ffcc00
+
+.articleSingle
+	display: flex
+	flex-direction: row
+	justify-content: space-between 
+	align-items: center
+	width: 100%
+	box-shadow: 0px 5px 15px 0 rgba(105, 105, 105, 0.1)
+	background-color: #ffffff
+	padding: 44px 30px 53px
+	&-content
+		display: flex
+		flex-direction: column
+	&-date
+		display: flex
+		flex-direction: row
+		align-items: center
+		margin-bottom: 22px
+		img
+			width: 17px
+			height: 17px
+		p
+			margin-left: 7px
+			font-weight: normal
+			font-size: 12px
+			text-transform: uppercase
+			color: #7f7f7f
+	&-title
+		margin-bottom: 3px
+		font-weight: bold
+		font-size: 22px
+		line-height: 30px
+		color: #4a4a4a
+	&-text
+		font-size: 16px
+		color: #4a4a4a
+	&-link
+		padding: 23px 57px 19px
+
+
 
 .catalog
 	display: grid
@@ -366,42 +472,6 @@ body
 		font-size: 30px
 		text-transform: lowercase
 
-.btn
-	display: inline-flex
-	justify-content: center
-	border: 2px solid transparent
-	text-transform: uppercase
-	font-weight: $font-weight-bold
-	transition: border-color .3s ease-in-out, background-color .3s ease-in-out, color .3s ease-in-out
-	&-primary
-		background-color: $color-primary
-		color: $color-gray--darkest
-		&:hover
-			background-color: $color-gray--darken
-			color: $color-gray--lightest
-	&-secondary
-		border-color: $color-gray--darken
-		color: $color-gray--darken
-		&:hover
-			background-color: $color-gray--darken
-			color: $color-gray--lightest
-	&-lg
-		padding: 20px 40px
-	&-sm
-		padding: 15px 30px
-	&-wrap
-		margin: 50px 0 0
-		text-align: center
-	&-toYellow
-		border: solid 2px #4a4a4a
-		color: #4a4a4a
-		transition: all 0.3s linear
-		&:hover
-			box-shadow: 0px 12px 20px 0 rgba(105, 105, 105, 0.22)
-			background-color: #ffcc00
-			border-color: #ffcc00
-			color: #2b356a
-
 .input
 	display: block
 	width: 100%
@@ -428,6 +498,19 @@ body
 		display: flex
 		flex-direction: row
 		padding: 40px 0 30px
+		&_home
+			position: relative
+			.aboutPage-block
+				&:first-child
+					width: 60%
+				&:last-child
+					position: absolute
+					top: -170px
+					right: 0
+					width: 40%
+					display: flex
+					justify-content: flex-end
+					align-items: flex-end
 	&-block
 		display: flex
 		flex-direction: column
@@ -463,6 +546,12 @@ body
 	display: flex
 	flex-direction: column
 	padding: 80px 0 202px
+	&_home
+		width: 370px
+		.sertificates-slide
+			width: 370px
+			img
+				height: 530px
 	&-slide
 		margin-right: 28px 
 		width: 270px
@@ -1088,22 +1177,15 @@ body
 		&:first-child
 			margin-top: 0
 	&-selectWrapper
-		width: 90%
-		box-shadow: 0px 6px 7px 0 rgba(105, 105, 105, 0.22)
-	&-select
 		position: relative
-		width: 100%
+		width: 90%
+	&-select
+		position: absolute
 		padding: 18px 22px
-		font-size: 16px
-		color: #1d1d1d
-		border: none !important	
-		background: none !important
-		appearance: none
-		outline: none !important
-		&:focus
-			outline: none !important
-			border: none !important	
-
+		top: -5px
+		left: -5px
+		bottom: -5px
+		right: -5px
 	&-labelRadio
 		position: relative
 		display: flex 
@@ -1230,6 +1312,7 @@ body
 			border-color: #ffcc00
 			box-shadow: 0px 6px 10px 0 rgba(105, 105, 105, 0.22)
 .order
+	padding-top: 82px
 	&-table, &-form
 		display: flex
 		flex-direction: column

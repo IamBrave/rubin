@@ -588,6 +588,7 @@ $(document).ready(function(){
 			prevArrow: '<div class="sertificates-arrow arrows-arrow arrows-arrow_prev"><span></span></div>',
 			nextArrow: '<div class="sertificates-arrow arrows-arrow arrows-arrow_next"><span></span></div>',
 		});
+
 		$('.sertificates-arrow').wrapAll('<div class="sertificates-arrows arrows sertificates-item"> </div>');
 		$('.sertificates-arrow').on('click', function(){
 			var index = parseInt($('.sertificates-slide.slick-current').attr('data-count'));
@@ -597,10 +598,32 @@ $(document).ready(function(){
 		});	
 	}
 });
+
+$(document).ready(function(){
+	if(document.querySelector('.sertificates-slider_home')){
+		$('.sertificates-slider_home').slick({
+			slideToShow: 1,
+			infinite: false,
+			autoplay: false,
+			variableWidth: true,
+			prevArrow: '<div class="sertificates-arrow arrows-arrow arrows-arrow_prev"><span></span></div>',
+			nextArrow: '<div class="sertificates-arrow arrows-arrow arrows-arrow_next"><span></span></div>',
+		});
+		
+		$('.sertificates-arrow').wrapAll('<div class="sertificates-arrows arrows sertificates-item"> </div>');
+		$('.sertificates-arrow').on('click', function(){
+			var index = parseInt($('.sertificates-slide.slick-current').attr('data-count'));
+			$('.sertificates-num_current').text(index);
+			var all = parseInt($('.sertificates-slide').length);
+			$('.sertificates-num_sum').text('/' + all);
+		});	
+	}
+});
+
 $(document).ready(function(){
 	if(document.querySelector('.partnersSlider-slider')){
 		$('.partnersSlider-slider').slick({
-			infinite: true,
+			infinite: false,
 			autoplay: false,
 			variableWidth: true,
 			prevArrow: '<div class="partnersSlider-arrow arrows-arrow arrows-arrow_prev"><span></span></div>',
@@ -661,6 +684,9 @@ function raf(fn){
 		})
 	})
 }
+
+//selects
+
 
 
 
