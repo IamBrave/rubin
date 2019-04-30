@@ -1487,6 +1487,43 @@ body
 		padding: 19px 57px
 		margin-top: 16px
 
+.bx-breadcrumb
+	display: flex
+	flex-direction: row
+	align-items: center
+	padding-bottom: 30px
+	&-item
+		&-link, &-text
+			font-size: 16px
+			color: #000
+		&-link
+			position: relative
+			margin-right: 15px
+			font-weight: bold
+			&:hover
+				&:after
+					width: 100%
+			&:before
+				content: '\232A'
+				position: absolute
+				right: -10px
+				font-size: 10px
+				bottom: 4px
+			&:after
+				content: ''
+				position: absolute
+				bottom: -5px
+				left: 0
+				width: 1%
+				height: 1px
+				background-color: #ffcc00
+				transition: width 0.3s ease-in-out 
+			&:hover
+
+		&-text
+			font-weight: normal
+
+
 	
 
 
