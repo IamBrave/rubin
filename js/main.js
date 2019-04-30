@@ -21,6 +21,10 @@ $(document).ready(function() {
 			y: -20,
 			ease: SlowMo.easeIn
 		}, '0')
+		.to('.intro-image', 10, {
+			scale: 1.3,
+			ease: SlowMo.easeIn
+		}, '0')
 		.from('.call', 1, {
 			opacity: 0,
 			y: -20,
@@ -46,11 +50,16 @@ $(document).ready(function() {
 			y: 50,
 			ease: SlowMo.easeIn
 		}, '0.4')
-		.staggerFrom('.intro-advantages__item', 0.5, {
+		.from('.intro-btn', 1.5, {
+			opacity: 0,
+			y: -50,
+			ease: SlowMo.easeIn
+		}, '0')
+		.staggerFrom('.intro-advantages__item', 2.5, {
 			opacity: 0,
 			x: 50,
 			ease: SlowMo.easeIn
-		}, 0.2, '0.6')
+		}, 0.6, '0.6')
 
 	// Scroll
 	var controller = new ScrollMagic.Controller();
@@ -114,11 +123,59 @@ $(document).ready(function() {
 				x: 50,
 				ease: SlowMo.easeIn
 			}, 0.2)
+			.staggerFrom('.benefit-link', 0.5, {
+				opacity: 0, 
+				y: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
 		
 		var benefit_scene = new ScrollMagic.Scene({
 			triggerElement: this
 		})
 		.setTween(benefit)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.articleSingle').each(function() {
+		var articleSingle = new TimelineMax;
+		articleSingle
+			.staggerFrom('.articleSingle-item', 0.5, {
+				opacity: 0, 
+				x: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+		
+		var articleSingle_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(articleSingle)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.benefitConstructor').each(function() {
+		var benefitConstructor = new TimelineMax;
+		benefitConstructor
+			.staggerFrom('.benefitConstructor-item', 0.5, {
+				opacity: 0, 
+				x: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+			.staggerFrom('.benefitConstructor-arrow', 0.5, {
+				opacity: 0, 
+				y: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+		
+		var benefitConstructor_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(benefitConstructor)
 		.addIndicators({
 			name: "1 (duration: 0)"
 		})
