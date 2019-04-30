@@ -523,6 +523,7 @@ $(document).ready(function() {
 		})
 		.addTo(controller)
 	});
+
 	$('.video').each(function() {
 		var videoPlayer = $(this).find('.video-player');
 		var videoItem = $(this).find('.video-listItem');
@@ -577,6 +578,92 @@ $(document).ready(function() {
 			triggerElement: this
 		})
 		.setTween(expl)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.product').each(function() {
+		var prodElem = $(this).find('.product-card');
+		var prodElem2 = $(this).find('.product-tabs');
+		var prodElem3 = $(this).find('.part-item');
+
+		var product = new TimelineMax;
+		product
+			.staggerFrom(prodElem, 1, {
+				opacity: 0,
+				x: 50,
+				ease: SlowMo.easeIn
+			}, '0.5')
+			.staggerFrom(prodElem2, 0.5, {
+				opacity: 0,
+				y: 50,
+				ease: SlowMo.easeIn
+			}, '0.7')
+			.staggerFrom(prodElem3, 0.5, {
+				opacity: 0,
+				y: 50,
+				ease: SlowMo.easeIn
+			}, '0.1')
+
+		var product_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(product)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.order').each(function() {
+		var order = new TimelineMax;
+		order
+			.staggerFrom('.order-header', 0.5, {
+				opacity: 0, 
+				y: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+			.from('.order-table', 0.5, {
+				opacity: 0, 
+				x: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+		
+		var order_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(order)
+		.addIndicators({
+			name: "1 (duration: 0)"
+		})
+		.addTo(controller)
+	});
+
+	$('.more').each(function() {
+		var more = new TimelineMax;
+		more
+			.staggerFrom('.more-image', 0.5, {
+				opacity: 0, 
+				y: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+			.from('.more-name', 0.5, {
+				opacity: 0, 
+				x: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+			.from('.more-link', 0.5, {
+				opacity: 0, 
+				x: 50,
+				ease: SlowMo.easeIn
+			}, 0.2)
+		
+		var more_scene = new ScrollMagic.Scene({
+			triggerElement: this
+		})
+		.setTween(more)
 		.addIndicators({
 			name: "1 (duration: 0)"
 		})
