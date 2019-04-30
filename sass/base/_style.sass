@@ -1314,10 +1314,10 @@ body
 			opacity: 1
 			display: flex
 			transform: translate(0)
+			transition: all 0.3s ease-in-out
 		&.enter, &.exit
 			display: flex
 			opacity: 0
-			transition: all 0.3s ease-in-out
 			transform: translate(-100px)
 	&-item
 		display: flex
@@ -1330,9 +1330,11 @@ body
 		transition: all .3s ease-in-out
 		&.active
 			border-left: 5px solid #ffcc00
+			transition: all 0.3s ease-in-out
 			.part-add
 				background-color: #ffcc00
 				border-color: #ffcc00
+				transition: all .3s ease-in-out
 		&.enter, &.exit 
 			transition: all .3s ease-in-out
 		&:hover
@@ -1400,15 +1402,19 @@ body
 			background-color: #ffcc00
 			border-color: #ffcc00
 			box-shadow: 0px 6px 10px 0 rgba(105, 105, 105, 0.22)
+			transition: all .3s ease-in-out
 .order
 	padding-top: 82px
 	&-table, &-form
 		display: flex
 		flex-direction: column
+	&-form
+		position: relative
 	&-row
 		position: relative
 		display: none
 		align-items: center
+		width: 100%
 		transition: all 0.3s ease-in-out
 		&:first-child, &:nth-child(2)
 			display: flex !important
@@ -1519,7 +1525,6 @@ body
 				background-color: #ffcc00
 				transition: width 0.3s ease-in-out 
 			&:hover
-
 		&-text
 			font-weight: normal
 

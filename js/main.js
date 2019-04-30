@@ -887,9 +887,10 @@ $(document).ready(function(){
 				if($(inp).hasClass('active') == true){
 					inp.checked = false;
 					animateExit(wrapper);
-					animateExit(elem);
 					animateExit(this);
 					elem.text = 'Добавить в комплектацию';
+					wrapper.classList.remove('active');
+					wrapper.classList.remove('exit');
 				} else {
 				}
 			};
@@ -910,6 +911,7 @@ $(document).ready(function(){
 
 		function animateExit (modal){
 			var handler = function (){
+				console.log(2);
 				modal.classList.remove('exit');
 				modal.classList.remove('active');
 				modal.removeEventListener('transitionend', handler);
