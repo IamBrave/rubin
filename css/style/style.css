@@ -2648,7 +2648,9 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 1.5px;
+  bottom: -50px;
+  width: 5px;
+  max-height: 20px;
   background: #ffcc00;
 }
 

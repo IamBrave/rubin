@@ -588,6 +588,7 @@ $(document).ready(function() {
 		var prodElem = $(this).find('.product-card');
 		var prodElem2 = $(this).find('.product-tabs');
 		var prodElem3 = $(this).find('.part-item');
+		var prodElem4 = $(this).find('.part-line');
 
 		var product = new TimelineMax;
 		product
@@ -860,8 +861,6 @@ $(document).ready(function(){
 					var add = this.querySelector('.part-add');
 					var elem = document.querySelector('.order-input[data-detail="'+ id +'"]');
 					var wrapper = document.querySelector('.order-row[data-detail="'+ id +'"]');
-					var rowsI = document.querySelectorAll('.order-row.active').length + 1;
-					var numb = wrapper.querySelector('.order-num');
 					
 					if($(wrapper).hasClass('active') == false){
 						animateActive(this);
@@ -869,9 +868,7 @@ $(document).ready(function(){
 						add.text = 'Добавлено в комплект';
 						elem.checked = true;
 						elem.classList.add('active');
-						numb.innerHTML = ''+ rowsI +'';
-						console.log(numb, rowsI);
-					} 
+					};
 				};
 			}
 		});
@@ -891,8 +888,7 @@ $(document).ready(function(){
 					elem.text = 'Добавить в комплектацию';
 					wrapper.classList.remove('active');
 					wrapper.classList.remove('exit');
-				} else {
-				}
+				} 
 			};
 		});
 
@@ -906,6 +902,7 @@ $(document).ready(function(){
 			raf(function(){
 				modal.classList.add('active');
 				modal.classList.remove('enter');
+				updateTableNumeration();
 			});
 		};
 
@@ -915,10 +912,17 @@ $(document).ready(function(){
 				modal.classList.remove('exit');
 				modal.classList.remove('active');
 				modal.removeEventListener('transitionend', handler);
+				updateTableNumeration();
 			};
 			modal.classList.add('exit');
 			modal.addEventListener('transitionend', handler);
 		};
+
+		function updateTableNumeration() {
+				$('.order-row.active').each(function(i) {
+					$(this).find('.order-num').html(i + 1);
+				});
+		}; 
 
 	};
 });
