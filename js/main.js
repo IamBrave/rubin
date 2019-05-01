@@ -831,7 +831,6 @@ function raf(fn){
 }
 
 //форма на странице "Продукт"
-//табы
 $(document).ready(function(){
 	if(document.querySelector('.product-tabs')){
 		$('.product-tab').on('click', function(e){
@@ -923,9 +922,63 @@ $(document).ready(function(){
 					$(this).find('.order-num').html(i + 1);
 				});
 		}; 
-
 	};
 });
+
+//модальное окно
+$('.btn_modal').on('click', function(e){
+			
+	e.preventDefault();
+	var modal = document.querySelector('.modal');
+	var newForm = document.createElement('form');
+	newForm.className = "modal-window";
+	newForm.setAttribute('method', 'POST');
+	newForm.setAttribute('action', 'submit.php');
+	newForm.innerHTML = '<img src="images/cross-mark.svg" class="modal-close"></img><div class="title-wrap"><h3 class="title title_large">Оставьте заявку и мы свяжемся с Вами в ближайшее время<span class="title-line"></span></h3></div><input type="text" class="offer-input" placeholder="Ваше имя"><input type="tel" class="offer-input" placeholder="+7(___) ___-__-__"><input type="submit" class="btn btn-primary offer-submit offer-submit" value="Отправить"></input>'; 
+	modal.appendChild(newForm);
+	var btnClose = modal.querySelector('.modal-close');
+	animateActive(modal);	
+	$('body').css('overflow-y', 'hidden');
+	
+	//удаление формы после закрытия окна и отправки сообщения
+	function closeModal(){
+		animateExit(modal);
+		$('body').css('overflow-y', 'scroll');
+		modal.removeChild(newForm);
+	};
+	
+
+	function animateActive (modal){
+		var handler = function(){
+			modal.classList.remove('active');
+			modal.removeEventListener('transitionend', handler);
+		};
+		modal.classList.add('enter');
+	
+		raf(function(){
+			modal.classList.add('active');
+			modal.classList.remove('enter');
+		});
+	};
+
+	
+	
+	function animateExit (modal){
+		var handler = function (){
+			modal.classList.remove('exit');
+			modal.classList.remove('active');
+			modal.removeEventListener('transitionend', handler);
+		};
+		modal.classList.add('exit');
+		modal.addEventListener('transitionend', handler);
+	};
+
+	btnClose.addEventListener('click', closeModal);
+	modal.addEventListener('submit', closeModal);
+});
+
+
+
 
 
 
