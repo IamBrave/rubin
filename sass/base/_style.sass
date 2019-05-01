@@ -1366,6 +1366,7 @@ body
 		top: 0
 		left: 0
 		width: 5px
+		height: 100%
 		max-height: 20px
 		background: #ffcc00
 	&-params
@@ -1433,6 +1434,9 @@ body
 		flex-wrap: wrap
 		width: 100%
 		height: 100%
+	&-galleryLoadMore
+		margin: 40px auto 0
+		padding: 23px 68px
 	&-photo
 		width: 32%
 		height: 300px
@@ -1656,23 +1660,301 @@ body
 	.offer-submit
 		margin-left: auto
 		margin-right: 0
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-	
-
 @import "../modules/_footer"
 
+	
+@media screen and (max-width: 1200px)
+	.container
+		max-width: 1024px
+	.articleSingle
+		flex-direction: column
+		align-items: flex-start
+		&-link
+			margin: 40px auto 0 0
+	.archive
+		&-buttons
+			flex-direction: column
+		&-link
+			&:last-child
+				margin-top: 20px
+	.benefitConstructor
+		&-item
+			width: 20%
+			img
+				margin-bottom: 20px
+		&-wheel
+			flex-wrap: wrap
+			p
+				width: 100%
+				margin-bottom: 10px
+	.aboutPage-wrapper_home 
+		.aboutPage-block
+			&:last-child
+				top: 70px
+	.sertificates
+		&_home
+			width: 250px
+		.slick-slide
+			height: 350px !important
+	.footer-bottomLink
+		.btn
+			padding: 20px 30px
+	.aboutPage
+		&-hexagon
+			left: 50px
+			height: 400px
+
+@media screen and (max-width: 1024px)
+	.container
+		max-width: 960px
+	.wrapper
+		height: 100%
+	.intro
+		position: relative
+		height: 100%
+		padding-bottom: 0
+		overflow: hidden
+		&-inner
+			padding-bottom: 50px
+		&-title, &-text
+			margin-top: 50px
+			margin-bottom: 20px
+		&-title
+			line-height: 1.5
+			margin-bottom: 20px
+		&-image
+			position: absolute
+			top: 0
+			height: 100%
+		&-btn
+			margin-bottom: 40px
+	.archive
+		flex-direction: column
+		&-item
+			width: 70%
+			margin: 0 auto 50px
+		&-link
+			width: 250px
+			margin: 0 auto
+	.benefit
+		&-link
+			padding: 32px 100px
+	.relations
+		left: 55%
+		&-list__item
+			&:last-child
+				font-size: 11px
+	.breadcrumbs
+		margin: 30px 0 0
+	.aboutPage
+		&-wrapper
+			padding: 0
+	.section
+		&-lg
+			padding: 60px 0
+			&:first-child
+				padding-top: 80px
+		&_partnersSlider, &_partnersSliderHome
+			padding-bottom: 140px
+	.sertificates
+		padding: 40px 0 150px 
+	.partnersSlider
+		padding-top: 20px
+	.article
+		padding-top: 0
+		&-text
+			&_first
+				margin: 30px 0 40px
+	.contact
+		&-item
+			width: 27%
+	.offer
+		bottom: -100px
+		padding: 50px 80px 36px
+	.smartMap
+		&-modal
+			width: 200px
+			padding: 10px 20px
+		&-adress
+			margin-bottom: 10px
+	.expl
+		padding: 0
+	.press
+		&-item
+			width: 47%
+		&-loadmore
+			width: 55%
+	.part
+		&-item
+			width: 100%
+		&-photo
+			&.active
+				width: 100vw
+				height: 40vh
+
+@media screen and (max-width: 768px)
+	.container
+		max-width: 720px
+	.intro
+		padding: 120px 0 40px
+		&-title
+			margin-bottom: 40px
+		&-advantages
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+	.archive
+		&-item
+			width: 90%
+		&-link
+			&:last-child
+				margin-top: 40px
+	.benefit
+		&-link
+			margin: 60px auto 0
+	.aboutPage
+		&-wrapper
+			&_home 
+				.aboutPage
+					&-block
+						&:first-child
+							width: 50%
+	.partnersSlider-slide
+		width: 150px
+	.relations
+		&_aboutPage
+			width: 55%
+			left: 60%
+			padding: 60px 40px
+	.footer
+		&-top, &-bottom
+			padding: 50px 0
+		&-bottom
+			flex-wrap: wrap
+		&-bottomItem
+			width: 50%
+			margin-bottom: 40px
+			&:last-child
+				width: 40%
+				margin: 0px auto 40px 0px
+		&-bottomLink
+			&.btn
+				padding: 15px 40px
+	.aboutPage-hexagon
+		left: 35px
+		height: 290px
+	.sertificates-slide
+		width: 300px
+	.sertificates .slick-slide, .sertificates-slide img
+		height: 400px !important
+	.offer
+		padding: 30px 40px
+		&_contact
+			width: 60%
+		&-input
+			width: 100%
+		.title
+			font-size: 30px
+	.product
+		&-card
+			flex-direction: column
+		&-imageWrap
+			height: 500px
+			width: 100%
+		&-filter
+			width: 100%
+		&-tab
+			padding: 24px 100px 19px
+	.part
+		&-photo
+			height: 250px
+	.more
+		&-image
+			width: 40%
+	.videoFollow
+		padding: 40px 40px
+@media screen and (max-width: 576px)
+	.container
+		max-width: 540px
+	.burger
+		position: fixed
+		top: 15px
+		left: auto
+		right: 20px
+		width: 30px
+		transition: all 0.3s ease-in-out
+		&-line
+			height: 2px
+			transition: transform 0.3s ease-in-out
+		&-title
+			display: none
+		&:hover, &.active
+			left: auto
+			transition: all 0.3s ease-in-out
+			.burger
+				&-line
+					&:nth-child(2), &:nth-child(3)
+						width: 100%
+		&.active
+			.burger
+				&-line
+					transform: rotate(720deg)
+					&:nth-child(1)
+						position: absolute
+						top: 10px
+						transform: rotate(45deg)
+					&:nth-child(2)
+						opacity: 0
+					&:nth-child(3)
+						position: absolute
+						top: 10px
+						transform: rotate(-45deg)
+						
+	.header
+		width: 100vw
+		height: 50px
+		left: 0
+		transform: translateX(0)
+		&-menu, &-contacts
+			position: relative
+			bottom: 500px
+			height: 0.0001px
+			opacity: 0
+			transition: all 0.3s ease-in-out
+		&.active
+			height: 100%
+			position: fixed
+			overflow: scroll
+			.header
+				&-menu
+					display: block
+					bottom: 0
+					height: 400px
+					margin-top: 50px
+					margin-bottom: 0
+					overflow-x: scroll 
+					background-color: #4a4a4a
+					opacity: 1
+				&-contacts
+					position: absolute
+					bottom: 0
+					height: 100px
+					right: 0
+					bottom: 0
+					width: 70%
+					display: block
+					margin: 0 auto
+					z-index: 150
+					opacity: 1
+					&__phone
+						font-size: 14px
+						margin-bottom: 10px
+	.call
+		top: 65px
+		right: 25px
+	.intro
+		padding-top: 70px
+		&-social
+			&__item_link
+				display: none
+						

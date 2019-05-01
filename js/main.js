@@ -8,6 +8,7 @@ $(document).ready(function() {
 		event.preventDefault();
 	});
 
+
 	// Call
 	$('.call').on('click', function() {
 		$(this).toggleClass('active');
