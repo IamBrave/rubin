@@ -961,8 +961,6 @@ $('.btn_modal').on('click', function(e){
 		});
 	};
 
-	
-	
 	function animateExit (modal){
 		var handler = function (){
 			modal.classList.remove('exit');
@@ -977,6 +975,57 @@ $('.btn_modal').on('click', function(e){
 	modal.addEventListener('submit', closeModal);
 });
 
+$('.part-photo').on('click', function(e){
+
+	var modal = document.querySelector('.modal');
+	var modalBg = modal.querySelector('.modal-bg')
+	var btnClose = document.createElement('img');
+	btnClose.setAttribute('class', 'modal-close modal-close_gallery');
+	btnClose.setAttribute('src', 'images/cross-mark.svg');
+	var photo = this.cloneNode(true);
+	modal.appendChild(photo);
+	modal.appendChild(btnClose);
+	var btnClose = modal.querySelector('.modal-close');
+	animateActive(modal);	
+	photo.classList.add('active');
+	$('body').css('overflow-y', 'hidden');
+	
+	//удаление формы после закрытия окна и отправки сообщения
+	function closeModal(){
+		animateExit(modal);
+		$('body').css('overflow-y', 'scroll');
+		modal.removeChild(btnClose);
+		modal.removeChild(photo);
+	};
+	
+
+	function animateActive (modal){
+		var handler = function(){
+			modal.classList.remove('active');
+			modal.removeEventListener('transitionend', handler);
+		};
+		modal.classList.add('enter');
+	
+		raf(function(){
+			modal.classList.add('active');
+			modal.classList.remove('enter');
+		});
+	};
+
+	function animateExit (modal){
+		var handler = function (){
+			modal.classList.remove('exit');
+			modal.classList.remove('active');
+			modal.removeEventListener('transitionend', handler);
+		};
+		modal.classList.add('exit');
+		modal.addEventListener('transitionend', handler);
+	};
+
+	btnClose.addEventListener('click', closeModal);
+	modalBg.addEventListener('click', closeModal);
+	modal.addEventListener('submit', closeModal);
+});
 
 
 

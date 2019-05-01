@@ -1404,6 +1404,74 @@ body
 			border-color: #ffcc00
 			box-shadow: 0px 6px 10px 0 rgba(105, 105, 105, 0.22)
 			transition: all .3s ease-in-out
+	&-info
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		img
+			margin: 0 auto 40px
+	&-infoText
+		width: 75%
+		font-weight: normal
+		font-size: 16px	
+		color: #1d1d1d
+		line-height: 1.5
+	&-infoLink
+		margin-bottom: 20px
+		font-weight: bold
+		font-size: 18px
+		cursor: pointer
+		color: #000
+		transition: all 0.3s ease-in-out
+		&:hover
+			text-decoration: underline
+			color: #ffcc00
+	&-gallery
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+		flex-wrap: wrap
+		width: 100%
+		height: 100%
+	&-photo
+		width: 32%
+		height: 300px
+		margin-bottom: 40px
+		overflow: hidden
+		transition: transform 0.3s ease-in-out
+		cursor: pointer
+		&:hover
+			& > div
+				transform: scale(1.2)
+		&.exit, &.enter
+			transition: width 0.3s ease-in-out
+		&.active
+			position: absolute
+			top: 50%
+			left: 50%
+			right: 0
+			bottom: 0
+			width: 70vw
+			height: 70vh
+			background: #000
+			z-index: 105
+			cursor: initial
+			transform: translate(-50%, -50%)
+			background: transparent
+			&:hover
+				& > div
+					transform: scale(1)
+			div
+				width: 100%
+				background-position: top
+				background-size: contain
+		div
+			width: 100%
+			height: 100%
+			background-position: center center
+			background-size: cover
+			background-repeat: no-repeat
+			transition: transform 0.3s ease-in-out
 .order
 	padding-top: 82px
 	&-table, &-form
@@ -1576,6 +1644,7 @@ body
 		top: 50px
 		cursor: pointer
 		transition: transform 0.3s ease-in-out
+		z-index: 105
 		&:hover
 			transform: rotate(720deg)
 	.title
