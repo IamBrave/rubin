@@ -87,6 +87,7 @@
 	position: fixed
 	top: 50px
 	right: 50px
+	z-index: 20
 	&:hover .call
 		&-title
 			width: 200px
@@ -109,6 +110,7 @@
 			animation: none
 			left: -119%
 			transform: translate(-5px, -50%)
+			border: 1px solid #ffcc00
 		&-image
 			animation: none
 	&-title
@@ -183,3 +185,15 @@
 		width: 100px
 		height: 100px
 		background-color: rgba(255, 204, 0, 0.5)
+
+@media screen and (max-width: 576px)
+	.call
+		&.active .call
+			&-inner
+				width: 205px
+				left: 0
+				transform: translate(-5px, 50%)
+			&-form
+				width: 100%
+		&-image
+			max-width: 40%

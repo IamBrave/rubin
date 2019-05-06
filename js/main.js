@@ -38,9 +38,46 @@ $(document).ready(function() {
 
 
 	// Call
-	$('.call').on('click', function() {
-		$(this).toggleClass('active');
-	});
+	var call = document.querySelector('.call');
+	var callTitle = call.querySelector('.call-title');
+	var callForm = call.querySelector('.call-form');
+	var inputForm = callForm.querySelector('input');
+	var body = document.querySelector('body');
+
+	callTitle.addEventListener('click', function openCall(e){
+		call.classList.add('active');
+		function submitCall(){
+			if(call.classList.contains('active')){
+				var tel = inputForm.value;
+				if(tel.length != 12){
+					inputForm.style.border = '1px solid red';
+				} else {
+					inputForm.style.border = '1px solid green';
+					function sbm(){
+						callForm.submit();
+					};
+					setTimeout(sbm, 1000);
+				}
+				// callForm.submit();
+			} else {
+				call.classList.add('active');
+				body.addEventListener('click', closeCall, true);
+			}
+		};
+
+		function closeCall(e){
+			if(e.target == inputForm){
+				callTitle.removeEventListener('click', openCall);
+				callTitle.addEventListener('click', submitCall);
+			} else if(e.target !== callTitle) {
+				call.classList.remove('active');
+				body.removeEventListener('click', closeCall, true);
+				callTitle.removeEventListener('click', submitCall, true);
+			}
+		};
+
+		body.addEventListener('click', closeCall, true);
+	})
 
 	// Animation
 	var intro = new TimelineMax;
@@ -866,6 +903,53 @@ $(document).ready(function(){
 	});
 });
 
+//технические параметры на странице "Продукты"
+$(document).ready(function(){
+	$(window).load(function(){
+		if(document.querySelector('.part-wrapper')){
+			var modalBtn = document.querySelectorAll('.part-params span');
+			for (let i = 0; i < modalBtn.length; i++) {
+				modalBtn[i].addEventListener('mouseenter', function(e){
+					var parent = this.parentNode;
+					var parent2 = parent.parentNode;
+					var parent3 = parent2.parentNode;
+					var id = parent3.getAttribute('data-detail');
+					var modal = document.querySelector('.part-modal[data-id="' + id + '"]');
+					var X = e.pageX;
+					var Y = e.pageY;
+					var top = Y + 20 + 'px';
+					var left = X - 150 + 'px';
+					$(modal).css({
+						top: top,
+						left: left
+					});
+					
+					var handler = function(){
+						modal.classList.remove('active');
+						modal.removeEventListener('transitionend', handler);
+					};
+					modal.classList.add('enter');
+
+					raf(function(){
+						modal.classList.add('active');
+						modal.classList.remove('enter');
+					});
+					this.addEventListener('mouseleave', function(e){
+						console.log(this);
+						var handler = function (){
+							modal.classList.remove('exit');
+							modal.classList.remove('active');
+							modal.removeEventListener('transitionend', handler);
+						};
+						modal.classList.add('exit');
+						modal.addEventListener('transitionend', handler);
+					});
+				});
+			};
+		};
+	});
+});
+
 function raf(fn){
 	window.requestAnimationFrame(function(){
 		window.requestAnimationFrame(function(){
@@ -951,7 +1035,6 @@ $(document).ready(function(){
 
 		function animateExit (modal){
 			var handler = function (){
-				console.log(2);
 				modal.classList.remove('exit');
 				modal.classList.remove('active');
 				modal.removeEventListener('transitionend', handler);

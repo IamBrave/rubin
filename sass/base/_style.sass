@@ -1,3 +1,5 @@
+html
+	overflow-x: hidden
 body
 	background-color: $color-gray--darkest
 	color: $color-gray--darkest
@@ -1318,14 +1320,16 @@ body
 		color: #1d1d1d
 .part
 	&-wrapper
+		position: relative
 		display: none
 		flex-direction: row
 		justify-content: space-between
 		flex-wrap: wrap
 		padding: 32px 0 0
 		transition: all 0.3s ease-in-out
+		z-index: 5
 		&.active
-			opacity: 1
+			opacity: .99
 			display: flex
 			transform: translate(0)
 			transition: all 0.3s ease-in-out
@@ -1334,6 +1338,7 @@ body
 			opacity: 0
 			transform: translate(-100px)
 	&-item
+		position: relative
 		display: flex
 		flex-direction: row
 		width: 49%
@@ -1384,16 +1389,17 @@ body
 		max-height: 20px
 		background: #ffcc00
 	&-params
+		position: relative
 		display: flex
 		flex-direction: row
 		align-items: flex-end
 		font-size: 14px	
 		color: #1d1d1d
-		p
+		& > p
 			max-width: 140px
 			padding-bottom: 2px
 			border-bottom: 1px dashed #ffcc00
-		span
+		& > span
 			position: relative
 			display: flex
 			justify-content: center
@@ -1405,6 +1411,37 @@ body
 			background-color: #e7e7e7
 			transition: all .3s ease-in-out
 			cursor: pointer
+	&-modal
+		position: absolute
+		top: 30px
+		left: 170px
+		display: none
+		flex-direction: row
+		flex-wrap: wrap
+		width: 250px
+		padding: 8px 18px 7px 11px
+		background: #262626
+		opacity: 1
+		transition: all .3s ease-in-out
+		z-index: 5
+		&.enter
+			display: flex
+			opacity: 0
+			transform: translate(30%)
+			transition: all .3s ease-in-out
+		&.active
+			display: flex
+			opacity: 1
+			transform: translate(0)
+			transition: all .3s ease-in-out
+		&.exit
+			opacity: 0
+			transform: translate(30%)
+			transition: all .3s ease-in-out
+		ul, p
+			font-size: 14px
+			line-height: 1.4
+			color: #fff
 	&-add
 		max-width: 240px
 		padding: 17px 40px
@@ -1906,6 +1943,7 @@ body
 		&-line
 			height: 2px
 			transition: transform 0.3s ease-in-out
+			background-color: #ffcc00
 		&-title
 			display: none
 		&:hover, &.active
@@ -1919,6 +1957,8 @@ body
 			.burger
 				&-line
 					transform: rotate(720deg)
+					&:before
+						background-color: #fff
 					&:nth-child(1)
 						position: absolute
 						top: 10px
@@ -2310,6 +2350,9 @@ body
 		&-add
 			padding: 17px 20px
 			text-align: center
+		&-modal
+			top: 30px
+			left: 170px
 	.order
 		padding-top: 10px
 		&-header

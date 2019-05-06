@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&subset=cyrillic-ext");
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: #1d1d1d;
   color: #1d1d1d;
@@ -2583,6 +2587,7 @@ body {
 }
 
 .part-wrapper {
+  position: relative;
   display: none;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -2596,10 +2601,11 @@ body {
   padding: 32px 0 0;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  z-index: 5;
 }
 
 .part-wrapper.active {
-  opacity: 1;
+  opacity: .99;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2619,6 +2625,7 @@ body {
 }
 
 .part-item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2703,6 +2710,7 @@ body {
 }
 
 .part-params {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2717,13 +2725,13 @@ body {
   color: #1d1d1d;
 }
 
-.part-params p {
+.part-params > p {
   max-width: 140px;
   padding-bottom: 2px;
   border-bottom: 1px dashed #ffcc00;
 }
 
-.part-params span {
+.part-params > span {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2742,6 +2750,62 @@ body {
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   cursor: pointer;
+}
+
+.part-modal {
+  position: absolute;
+  top: 30px;
+  left: 170px;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 250px;
+  padding: 8px 18px 7px 11px;
+  background: #262626;
+  opacity: 1;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  z-index: 5;
+}
+
+.part-modal.enter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  -webkit-transform: translate(30%);
+          transform: translate(30%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.part-modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.part-modal.exit {
+  opacity: 0;
+  -webkit-transform: translate(30%);
+          transform: translate(30%);
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.part-modal ul, .part-modal p {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fff;
 }
 
 .part-add {
@@ -3354,6 +3418,7 @@ body {
   position: fixed;
   top: 50px;
   right: 50px;
+  z-index: 20;
 }
 
 .call:hover .call-title {
@@ -3392,6 +3457,7 @@ body {
   left: -119%;
   -webkit-transform: translate(-5px, -50%);
           transform: translate(-5px, -50%);
+  border: 1px solid #ffcc00;
 }
 
 .call.active .call-image {
@@ -3532,6 +3598,21 @@ body {
     width: 100px;
     height: 100px;
     background-color: rgba(255, 204, 0, 0.5);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .call.active .call-inner {
+    width: 205px;
+    left: 0;
+    -webkit-transform: translate(-5px, 50%);
+            transform: translate(-5px, 50%);
+  }
+  .call.active .call-form {
+    width: 100%;
+  }
+  .call-image {
+    max-width: 40%;
   }
 }
 
@@ -3840,6 +3921,7 @@ body {
     transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    background-color: #ffcc00;
   }
   .burger-title {
     display: none;
@@ -3855,6 +3937,9 @@ body {
   .burger.active .burger-line {
     -webkit-transform: rotate(720deg);
             transform: rotate(720deg);
+  }
+  .burger.active .burger-line:before {
+    background-color: #fff;
   }
   .burger.active .burger-line:nth-child(1) {
     position: absolute;
@@ -4394,6 +4479,10 @@ body {
   .part-add {
     padding: 17px 20px;
     text-align: center;
+  }
+  .part-modal {
+    top: 30px;
+    left: 170px;
   }
   .order {
     padding-top: 10px;
