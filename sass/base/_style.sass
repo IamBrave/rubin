@@ -217,9 +217,10 @@ body
 	justify-content: space-between 
 	align-items: center
 	width: 100%
-	box-shadow: 0px 5px 15px 0 rgba(105, 105, 105, 0.1)
+	box-shadow: 0px 15px 15px 0 rgba(255, 204, 0, 0.1)
 	background-color: #ffffff
 	padding: 44px 30px 53px
+	animation: articleSingle 2s linear infinite
 	&-content
 		display: flex
 		flex-direction: column
@@ -249,6 +250,13 @@ body
 	&-link
 		padding: 23px 57px 19px
 
+@keyframes articleSingle 
+	0%
+		box-shadow: 0px 5px 15px 0 rgba(255, 204, 0, 0.1)
+	50%
+		box-shadow: 0px 15px 15px 0 rgba(255, 204, 0, 0.6)
+	100%
+		box-shadow: 0px 5px 15px 0 rgba(255, 204, 0, 0.1)
 
 
 .catalog
@@ -693,8 +701,11 @@ body
 		justify-content: space-between
 		flex-wrap: wrap
 		padding: 40px 0 30px
+		.slick-initialized .slick-slide
+			display: flex
 	&-item
 		width: 30%
+		min-height: 700px
 		display: flex
 		flex-direction: column
 		align-items: flex-start
@@ -743,6 +754,7 @@ body
 		line-height: 30px
 		color: #4a4a4a
 	&-link
+		margin: auto auto 0 0
 		padding: 23px 56px 19px
 	&-loadmore
 		padding: 24px 100px
@@ -962,6 +974,8 @@ body
 		width: 100%
 		font-size: 15px
 		color: #ffcc00 
+.smartMenu
+	display: none
 .diler
 	display: flex
 	flex-direction: row
@@ -2166,6 +2180,11 @@ body
 		&-slide
 			width: 95vw
 	.press
+		&-wrapper
+			&.slick-initialized 
+				.slick-slide
+					display: flex
+					min-height: 650px
 		&-item
 			width: 100%
 			margin-bottom: 0

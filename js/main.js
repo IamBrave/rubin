@@ -50,7 +50,7 @@ $(document).ready(function() {
 			y: -20,
 			ease: SlowMo.easeIn
 		}, '0')
-		.to('.intro-image', 10, {
+		.to('.intro-image', 5, {
 			scale: 1.3,
 			ease: SlowMo.easeIn
 		}, '0')
@@ -84,11 +84,11 @@ $(document).ready(function() {
 			y: -50,
 			ease: SlowMo.easeIn
 		}, '0')
-		.staggerFrom('.intro-advantages__item', 2.5, {
+		.staggerFrom('.intro-advantages__item', 0.5, {
 			opacity: 0,
 			x: 50,
 			ease: SlowMo.easeIn
-		}, 0.6, '0.6')
+		}, 0.4, '0.4')
 
 	// Scroll
 	var controller = new ScrollMagic.Controller();

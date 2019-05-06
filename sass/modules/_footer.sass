@@ -91,18 +91,26 @@
 		&-title
 			width: 200px
 			&:before
-				width: 100%
+				width: 70%
 		&-inner
 			width: 210px
+			animation: none
+		&-image
+			animation: none
 	&.active .call
 		&-title
 			width: 200px
 			&:before
 				content: "Отправить"
-				width: 100%
+				width: 70%
 		&-inner
 			width: 450px
 			background-color: $color-gray--lightest
+			animation: none
+			left: -119%
+			transform: translate(-5px, -50%)
+		&-image
+			animation: none
 	&-title
 		display: flex
 		justify-content: center
@@ -127,17 +135,22 @@
 	&-inner
 		position: absolute
 		top: 50%
-		right: -5px
+		left: 50%
 		width: 60px
 		height: 60px
 		padding: 5px
 		border-radius: 50px
 		background-color: rgba($color-gray--lightest, .5)
-		transform: translateY(-50%)
+		transform: translate(-50%, -50%)
 		transition: width .4s ease-in-out, background-color .3s ease-in-out
+		animation: callInner 1.5s linear infinite
 	&-form
 		width: calc(100% - 200px)
 		height: 100%
+	&-image
+			position: relative
+			animation: callImage 0.2s ease-in-out infinite
+			
 
 .overlay
 	position: fixed
@@ -153,3 +166,20 @@
 	&.active
 		opacity: 1
 		visibility: visible
+
+@keyframes callImage 
+	0%
+		transform: rotate(5deg)
+	50%
+		transform: rotate(-5deg)
+	100%
+		transform: rotate(5deg)
+@keyframes callInner 
+	0%
+		width: 60px
+		height: 60px
+		background-color: rgba($color-gray--lightest, .5)
+	100%
+		width: 100px
+		height: 100px
+		background-color: rgba(255, 204, 0, 0.5)
