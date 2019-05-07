@@ -3454,7 +3454,8 @@ body {
   background-color: #ffffff;
   -webkit-animation: none;
           animation: none;
-  left: -119%;
+  left: auto;
+  right: -6%;
   -webkit-transform: translate(-5px, -50%);
           transform: translate(-5px, -50%);
   border: 1px solid #ffcc00;
@@ -3610,6 +3611,9 @@ body {
   }
   .call.active .call-form {
     width: 100%;
+  }
+  .call.active .call-image {
+    max-width: 8%;
   }
   .call-image {
     max-width: 40%;

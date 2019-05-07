@@ -17,7 +17,9 @@ $(document).ready(function() {
 		if(burger.classList.contains('active') == false){
 			burger.classList.add('active');
 			header.classList.add('active');
-			wrapper.classList.add('active');
+			if(wrapper){
+				wrapper.classList.add('active');
+			}
 			overlay.classList.add('active');
 			overlay.addEventListener('click', closeMenu);
 			burger.addEventListener('click', closeMenu);
@@ -29,7 +31,9 @@ $(document).ready(function() {
 		function closeMenu(e){
 			burger.classList.remove('active');
 			header.classList.remove('active');
-			wrapper.classList.remove('active');
+			if(wrapper){
+				wrapper.classList.remove('active');
+			}
 			overlay.classList.remove('active');
 			burger.removeEventListener('click', closeMenu);
 			burger.addEventListener('click', openMenu);
@@ -1072,7 +1076,7 @@ $('.btn_modal').on('click', function(e){
 		animateExit(modal);
 		$('body').css('overflow-y', 'scroll');
 		modal.removeChild(newForm);
-	};
+	};	
 	
 
 	function animateActive (modal){
@@ -1099,7 +1103,7 @@ $('.btn_modal').on('click', function(e){
 	};
 
 	btnClose.addEventListener('click', closeModal);
-	modal.addEventListener('submit', closeModal);
+	newForm.addEventListener('submit', closeModal);
 });
 
 $('.part-photo').on('click', function(e){
