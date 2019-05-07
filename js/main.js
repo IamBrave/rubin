@@ -17,8 +17,8 @@ $(document).ready(function() {
 		if(burger.classList.contains('active') == false){
 			burger.classList.add('active');
 			header.classList.add('active');
-			if(wrapper){
-				wrapper.classList.add('active');
+			if (wrapper) {
+				wrapper.classList.add('active');	
 			}
 			overlay.classList.add('active');
 			overlay.addEventListener('click', closeMenu);
@@ -31,8 +31,8 @@ $(document).ready(function() {
 		function closeMenu(e){
 			burger.classList.remove('active');
 			header.classList.remove('active');
-			if(wrapper){
-				wrapper.classList.remove('active');
+			if (wrapper) {
+				wrapper.classList.remove('active');	
 			}
 			overlay.classList.remove('active');
 			burger.removeEventListener('click', closeMenu);
@@ -1061,13 +1061,12 @@ $('.btn_modal').on('click', function(e){
 			
 	e.preventDefault();
 	var modal = document.querySelector('.modal');
-	var newForm = document.createElement('form');
-	newForm.className = "modal-window";
-	newForm.setAttribute('method', 'POST');
-	newForm.setAttribute('action', 'submit.php');
-	newForm.innerHTML = '<img src="images/cross-mark.svg" class="modal-close"></img><div class="title-wrap"><h3 class="title title_large">Оставьте заявку и мы свяжемся с Вами в ближайшее время<span class="title-line"></span></h3></div><input type="text" class="offer-input" placeholder="Ваше имя"><input type="tel" class="offer-input" placeholder="+7(___) ___-__-__"><input type="submit" class="btn btn-primary offer-submit offer-submit" value="Отправить"></input>'; 
+	var newForm = modal.querySelector('.modal-window');
+	newForm.innerHTML = '<img src="/local/templates/rubin/images/cross-mark.svg" class="modal-close"></img><div class="title-wrap"><h3 class="title title_large">Оставьте заявку и мы свяжемся с Вами в ближайшее время<span class="title-line"></span></h3></div><input type="text" class="offer-input" name="name" placeholder="Ваше имя"><input type="tel" name="phone" class="offer-input" placeholder="+7(___) ___-__-__"><input type="submit" class="btn btn-primary offer-submit offer-submit" value="Отправить"></input>';
 	modal.appendChild(newForm);
 	var btnClose = modal.querySelector('.modal-close');
+	var formBtn = modal.querySelector('.offer-submit');
+	var inputTel = modal.querySelector('input[type="tel"]');
 	animateActive(modal);	
 	$('body').css('overflow-y', 'hidden');
 	
@@ -1075,8 +1074,26 @@ $('.btn_modal').on('click', function(e){
 	function closeModal(){
 		animateExit(modal);
 		$('body').css('overflow-y', 'scroll');
-		modal.removeChild(newForm);
-	};	
+	};
+
+	function validateForm(e){
+		e.preventDefault();
+		var tel = inputTel.value;
+			if(tel.length != 12){
+				inputTel.style.border = '1px solid red';
+			} else {
+				inputTel.style.border = '1px solid green';
+				setTimeout(submitModal, 1000);
+			}
+	};
+
+	function submitModal(e){
+		console.log(1);
+		newForm.submit();
+		// animateExit(modal);
+		// $('body').css('overflow-y', 'scroll');
+		// modal.removeChild(newForm);
+	};
 	
 
 	function animateActive (modal){
@@ -1099,11 +1116,11 @@ $('.btn_modal').on('click', function(e){
 			modal.removeEventListener('transitionend', handler);
 		};
 		modal.classList.add('exit');
-		modal.addEventListener('transitionend', handler);
+		newForm.addEventListener('transitionend', handler);
 	};
 
 	btnClose.addEventListener('click', closeModal);
-	newForm.addEventListener('submit', closeModal);
+	formBtn.addEventListener('click', validateForm);
 });
 
 $('.part-photo').on('click', function(e){
@@ -1202,16 +1219,3 @@ $('.smartMenu-link').on('click', function(e){
 	};
 
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
