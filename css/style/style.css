@@ -3177,6 +3177,14 @@ body {
   font-weight: normal;
 }
 
+.modalAnswer {
+  text-align: center;
+}
+
+.modalAnswer .modal-window {
+  height: 200px;
+}
+
 .modal, .modalAnswer {
   position: fixed;
   display: none;
@@ -3185,14 +3193,6 @@ body {
   z-index: 100;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-}
-
-.modal.Answer, .modalAnswer.Answer {
-  text-align: center;
-}
-
-.modal.Answer .modal-window, .modalAnswer.Answer .modal-window {
-  height: 200px;
 }
 
 .modal.active, .modalAnswer.active {
@@ -3908,6 +3908,14 @@ body {
   }
   .videoFollow {
     padding: 40px 40px;
+  }
+  .modal-window {
+    width: 500px;
+    height: 500px;
+    padding: 50px;
+  }
+  .modal .title {
+    font-size: 20px;
   }
 }
 
@@ -4666,5 +4674,21 @@ body {
     margin-top: 5px;
     font-size: 16px;
     color: #ffcc00;
+  }
+  .modal-window {
+    width: 280px;
+    height: auto;
+    padding: 20px;
+  }
+  .modal .title {
+    padding-left: 0;
+    font-size: 16px;
+  }
+  .modal-close {
+    right: 20px;
+    top: 20px;
+  }
+  .modal .offer-input {
+    width: 100%;
   }
 }
