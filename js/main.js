@@ -1148,7 +1148,7 @@ function modalAnswer(modal){
 	animateActive(modal);
 	$('body').css('overflow-y', 'hidden');
 	var close = modal.querySelector('.modal-close');
-	close.addEventListener('click', function(modal){
+	close.addEventListener('click', function(e){
 		animateExit(modal);
 		$('body').css('overflow-y', 'scroll');
 	})
