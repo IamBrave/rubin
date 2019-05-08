@@ -1020,6 +1020,24 @@ $(document).ready(function(){
 			};
 		});
 
+		//модальное продукция
+		if(document.querySelector('.order-submit')){
+
+			var btn = document.querySelector('.order-submit');
+			var modal = document.querySelector('.product-form .modal');
+			var close = modal.querySelector('.modal-close');
+
+			function openModal(e){
+				console.log(modal);
+				animateActive(modal);
+
+				$(close).on('click', function(){
+					animateExit(modal);
+				});
+			}
+			btn.addEventListener('click', openModal);
+		}
+
 		function animateActive (modal){
 			var handler = function(){
 				modal.classList.remove('active');

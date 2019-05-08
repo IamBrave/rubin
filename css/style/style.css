@@ -2586,6 +2586,11 @@ body {
   color: #1d1d1d;
 }
 
+.product .modal {
+  top: 0;
+  left: 0;
+}
+
 .part-wrapper {
   position: relative;
   display: none;
