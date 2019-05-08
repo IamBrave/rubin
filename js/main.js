@@ -789,11 +789,12 @@ $(document).ready(function() {
 	google.maps.event.addDomListener(window, 'load', initialize);
 });
 $(document).ready(function() {
-	//sertificate counter
-	var all = $('.sertificates-slide').length;
-	$('.sertificates-num_sum').text('/' + all);
+//sertificate counter
+var all = $('.sertificates-slide').length;
+$('.sertificates-num_sum').text('/' + all);
 });
 //slick
+//слайдер сертификаты 
 $(document).ready(function(){
 	if(document.querySelector('.sertificates-slider')){
 		$('.sertificates-slider').slick({
@@ -811,9 +812,12 @@ $(document).ready(function(){
 			var all = parseInt($('.sertificates-slide').length);
 			$('.sertificates-num_sum').text('/' + all);
 		});	
+		$('.sertificates-slide').on('click', function(e){
+			var slider = e.target.closest('.slick-slider');
+		})
 	}
 });
-
+//слайдер сертификаты домашняя страница
 $(document).ready(function(){
 	if(document.querySelector('.sertificates-slider_home')){
 		$('.sertificates-slider_home').slick({
@@ -834,7 +838,7 @@ $(document).ready(function(){
 		});	
 	}
 });
-
+//слайдер пресс-центр для мобил
 $(document).ready(function(){
 	if ($(window).width() < 576) {
 		if(document.querySelector('.press-wrapper_home')){
@@ -850,6 +854,7 @@ $(document).ready(function(){
 	};
 });
 
+//слайдер партнеры
 $(document).ready(function(){
 	if(document.querySelector('.partnersSlider-slider')){
 		$('.partnersSlider-slider').slick({
@@ -953,14 +958,6 @@ $(document).ready(function(){
 		};
 	});
 });
-
-function raf(fn){
-	window.requestAnimationFrame(function(){
-		window.requestAnimationFrame(function(){
-			fn();
-		})
-	})
-}
 
 //форма на странице "Продукт"
 $(document).ready(function(){
@@ -1094,30 +1091,6 @@ $('.btn_modal').on('click', function(e){
 		// $('body').css('overflow-y', 'scroll');
 		// modal.removeChild(newForm);
 	};
-	
-
-	function animateActive (modal){
-		var handler = function(){
-			modal.classList.remove('active');
-			modal.removeEventListener('transitionend', handler);
-		};
-		modal.classList.add('enter');
-	
-		raf(function(){
-			modal.classList.add('active');
-			modal.classList.remove('enter');
-		});
-	};
-
-	function animateExit (modal){
-		var handler = function (){
-			modal.classList.remove('exit');
-			modal.classList.remove('active');
-			modal.removeEventListener('transitionend', handler);
-		};
-		modal.classList.add('exit');
-		newForm.addEventListener('transitionend', handler);
-	};
 
 	btnClose.addEventListener('click', closeModal);
 	formBtn.addEventListener('click', validateForm);
@@ -1145,30 +1118,6 @@ $('.part-photo').on('click', function(e){
 		modal.removeChild(btnClose);
 		modal.removeChild(photo);
 	};
-	
-
-	function animateActive (modal){
-		var handler = function(){
-			modal.classList.remove('active');
-			modal.removeEventListener('transitionend', handler);
-		};
-		modal.classList.add('enter');
-	
-		raf(function(){
-			modal.classList.add('active');
-			modal.classList.remove('enter');
-		});
-	};
-
-	function animateExit (modal){
-		var handler = function (){
-			modal.classList.remove('exit');
-			modal.classList.remove('active');
-			modal.removeEventListener('transitionend', handler);
-		};
-		modal.classList.add('exit');
-		modal.addEventListener('transitionend', handler);
-	};
 
 	btnClose.addEventListener('click', closeModal);
 	modalBg.addEventListener('click', closeModal);
@@ -1176,7 +1125,6 @@ $('.part-photo').on('click', function(e){
 });
 
 $('.smartMenu-link').on('click', function(e){
-
 	var modal = this.querySelector('.smartMenu-linkHeader');
 	var modalDesc = this.querySelector('.smartMenu-desc');
 	var arrow = this.querySelector('.smartMenu-arrow');
@@ -1193,29 +1141,48 @@ $('.smartMenu-link').on('click', function(e){
 			arrow.classList.remove('active');
 		}
 	}
-
-	
-	function animateActive (modal){
-		var handler = function(){
-			modal.classList.remove('active');
-			modal.removeEventListener('transitionend', handler);
-		};
-		modal.classList.add('enter');
-	
-		raf(function(){
-			modal.classList.add('active');
-			modal.classList.remove('enter');
-		});
-	};
-
-	function animateExit (modal){
-		var handler = function (){
-			modal.classList.remove('exit');
-			modal.classList.remove('active');
-			modal.removeEventListener('transitionend', handler);
-		};
-		modal.classList.add('exit');
-		modal.addEventListener('transitionend', handler);
-	};
-
 });
+
+//модальное окно - ответ
+function modalAnswer(modal){
+	animateActive(modal);
+	$('body').css('overflow-y', 'hidden');
+	var close = modal.querySelector('.modal-close');
+	close.addEventListener('click', function(modal){
+		animateExit(modal);
+		$('body').css('overflow-y', 'scroll');
+	})
+}
+
+//анимация
+function animateActive (modal){
+	var handler = function(){
+		modal.classList.remove('active');
+		modal.removeEventListener('transitionend', handler);
+	};
+	modal.classList.add('enter');
+
+	raf(function(){
+		modal.classList.add('active');
+		modal.classList.remove('enter');
+	});
+};
+
+function animateExit (modal){
+	var handler = function (){
+		modal.classList.remove('exit');
+		modal.classList.remove('active');
+		modal.removeEventListener('transitionend', handler);
+	};
+	modal.classList.add('exit');
+	modal.addEventListener('transitionend', handler);
+};
+
+
+function raf(fn){
+	window.requestAnimationFrame(function(){
+		window.requestAnimationFrame(function(){
+			fn();
+		})
+	})
+}
