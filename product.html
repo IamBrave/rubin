@@ -10,6 +10,9 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/style/style.css" />
+	<link rel="stylesheet" type="text/css" href="./src/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="libs/photoswipe/photoswipe.css"/>
+	<link rel="stylesheet" type="text/css" href="libs/photoswipe/default-skin/default-skin.css"/>
 	<title>Главная</title>
 </head>
 
@@ -237,25 +240,32 @@
 							</div>
 							<!-- /.part-wrapper -->
 							<div class="part-wrapper" data-id="2">
-								<div class="part-info">
-									<img src="/images/info-table.jpg" alt="">
-									<a href="" target="_blank" class="part-infoLink">Скачать характеристики</a> 
-									<!-- /.part-infoLink -->
-									<p class="part-infoText">Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне.
-											Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</p>
-									<!-- /.part-text -->
+								<div class="table">
+									<div class="table-top">	
+										<p>Наименование</p>
+										<div class="table-characteristic">
+											<p>Опрыскиватель самоходный "Рубин"</p>
+										</div>
+									</div>
+									<div class="table-row">
+										<p>Модификация</p>
+										<div class="table-characteristic">
+											<p>Рубин 600(1200)</p>
+											<p>Рубин TD-600(TD-1200)</p>
+										</div>
+									</div>
+									<div class="table-row">
+										<p>Максимальная заправка емкости, л</p>
+										<div class="table-characteristic">
+											<p>600(1200)</p>
+										</div>
+									</div>
 								</div>
-								<!-- /.part-item -->
+								<!-- /.table -->
 							</div>
 							<!-- /.part-wrapper -->
 							<div class="part-wrapper" data-id="3">
-								<div class="part-gallery">
+								<!-- <div class="part-gallery">
 									<div class="part-photo"><div style="background-image: url('images/1.jpg')"></div></div>
 									<div class="part-photo"><div style="background-image: url('images/1.jpg')"></div></div>
 									<div class="part-photo"><div style="background-image: url('images/1.jpg')"></div></div>
@@ -264,7 +274,19 @@
 									<div class="part-photo"><div style="background-image: url('images/1.jpg')"></div></div>
 									<div class="part-photo"><div style="background-image: url('images/1.jpg')"></div></div>
 									<div class="part-photo"><div style="background-image: url('images/1.jpg')"></div></div>
-								</div>
+								</div> -->
+								<div class="my-gallery part-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+									<figure class="part-photo" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/1.jpg" itemprop="contentUrl" data-size="1024x768">
+													<img src="images/1.jpg" itemprop="thumbnail" alt="Image description" />
+											</a>
+									</figure>
+									<figure class="part-photo" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+											<a href="images/2.jpg" itemprop="contentUrl" data-size="1024x768">
+													<img src="images/2.jpg" itemprop="thumbnail" alt="Image description" />
+											</a>
+									</figure>
+							</div>
 								<!-- /.part-gallery -->
 								<a href="" class="part-galleryLoadMore btn btn-primary">Загрузить ещё</a> 
 								<!-- /.load-more btn btn-primary -->
@@ -469,14 +491,81 @@
 		</div>
 	</div>
 	<div class="overlay"></div>
+	<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+			<!-- Background of PhotoSwipe. 
+					 It's a separate element, as animating opacity is faster than rgba(). -->
+			<div class="pswp__bg"></div>
+	
+			<!-- Slides wrapper with overflow:hidden. -->
+			<div class="pswp__scroll-wrap">
+	
+					<!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+					<!-- don't modify these 3 pswp__item elements, data is added later on. -->
+					<div class="pswp__container">
+							<div class="pswp__item"></div>
+							<div class="pswp__item"></div>
+							<div class="pswp__item"></div>
+					</div>
+	
+					<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+					<div class="pswp__ui pswp__ui--hidden">
+	
+							<div class="pswp__top-bar">
+	
+									<!--  Controls are self-explanatory. Order can be changed. -->
+	
+									<div class="pswp__counter"></div>
+	
+									<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+	
+									<button class="pswp__button pswp__button--share" title="Share"></button>
+	
+									<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+	
+									<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+	
+									<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+									<!-- element will get class pswp__preloader--active when preloader is running -->
+									<div class="pswp__preloader">
+											<div class="pswp__preloader__icn">
+												<div class="pswp__preloader__cut">
+													<div class="pswp__preloader__donut"></div>
+												</div>
+											</div>
+									</div>
+							</div>
+	
+							<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+									<div class="pswp__share-tooltip"></div> 
+							</div>
+	
+							<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+							</button>
+	
+							<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+							</button>
+	
+							<div class="pswp__caption">
+									<div class="pswp__caption__center"></div>
+							</div>
+	
+						</div>
+	
+					</div>
+	
+	</div>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCih18HF671QWRWMVA3z1jSM3uV94706vY"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/greensock.min.js"></script>
+	<script src="libs/photoswipe/photoswipe-ui-default.min.js"></script>
+	<script src="libs/photoswipe/photoswipe.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/debug.addIndicators.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.6/plugins/animation.gsap.js"></script>
 	<script src="js/splittext.min.js"></script>
 	<script src="js/main.js"></script>
+	
 
 </body>
 

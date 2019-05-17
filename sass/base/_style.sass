@@ -83,6 +83,50 @@ body
 
 @import "../modules/_header"
 
+.table
+	display: flex
+	flex-direction: column
+	width: 100%
+	border: 1px solid #f6f6f6
+	font-size: 16px
+	font-weight: 400
+	color: #1d1d1d
+	line-height: 34px
+	&-top, &-row
+		display: flex
+		flex-direction: row
+		width: 100%
+		padding-left: 30px
+		border-bottom: 1px dashed #a1a1a1
+		& > p
+			display: flex
+			align-items: center
+			width: 60%
+		&:nth-child(2n)
+			background: #f6f6f6
+		&:last-child
+			border-bottom: none
+	&-characteristic
+		display: flex
+		flex-direction: row
+		justify-content: center
+		align-items: center
+		width: 40%
+		border-left: 1px solid #e7e7e7
+		p
+			display: flex
+			justify-content: center
+			align-items: center
+			flex-basis: 50%
+			flex-grow: 1
+			height: 100%
+			text-align: center
+			border-left: 1px solid #e7e7e7
+			&:first-child
+				border: none
+	
+
+
 .btn
 	display: inline-flex
 	justify-content: center
